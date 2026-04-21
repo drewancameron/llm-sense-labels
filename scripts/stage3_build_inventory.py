@@ -211,7 +211,7 @@ def main() -> None:
         slug_by_custom_id[cid] = slug
         builder.add(
             custom_id=cid, system=system, user=user,
-            response_format={"type": "json_object"}, max_tokens=4000,
+            response_format={"type": "json_object"}, max_tokens=16000,
         )
 
     if not builder.requests:
