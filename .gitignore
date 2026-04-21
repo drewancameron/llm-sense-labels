@@ -1,0 +1,19 @@
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+.env
+.venv/
+venv/
+*.egg-info/
+
+# Generated data
+demo_db/demo.db
+demo_db/cache/
+outputs/context_records/
+outputs/candidate_labels/
+outputs/bulk_labels/
+outputs/batch_jobs/
+
+# Keep the curated reference inventory under version control
+!outputs/reference_sense_inventory.json
