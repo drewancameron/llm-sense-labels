@@ -32,7 +32,12 @@ stages:
     # Input ≈ 4K tokens; output ≈ 300 tokens.
 
   stage3_build_inventory:
-    model: "gpt-5.4-pro"
+    model: "gpt-5.4"                 # gpt-5.4-pro is only available via the
+                                     # /v1/responses endpoint, which this
+                                     # wrapper does not yet support. Using
+                                     # gpt-5.4 gives nearly the same quality
+                                     # at ~10x lower cost; promote to -pro
+                                     # when the Responses-API path lands.
     batch: false                     # low volume (10 calls), want low latency
     cache: true
     # Per-lemma: synthesise candidate senses into clean inventory.
