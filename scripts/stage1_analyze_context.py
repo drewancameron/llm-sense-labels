@@ -79,8 +79,14 @@ def render_user(template: str, passage_row, work_row, lemma_row, notes) -> str:
     )
 
 
-def fetch_target_passages(conn, lemma_slugs: list[str] | None):
-    """Return passages that contain at least one target-lemma occurrence."""
+def fetch_target_passages(conn, lemma_slugs: list[str] | None, force: bool = False):
+    """Return passages that contain at least one target-lemma occurrence.
+
+    Unless `force` is set, skip passages that already have a
+    context_records row: Stage 1 is a pure function of the passage, and
+    re-running produces the same output at double the cost.
+    """
+    skip = "" if force else "AND p.passage_id NOT IN (SELECT passage_id FROM context_records)"
     if lemma_slugs:
         placeholders = ",".join("?" for _ in lemma_slugs)
         sql = f"""
@@ -92,10 +98,11 @@ def fetch_target_passages(conn, lemma_slugs: list[str] | None):
           JOIN occurrences o ON p.passage_id = o.passage_id
           JOIN works w ON p.work_id = w.work_id
           WHERE o.lemma_slug IN ({placeholders})
+          {skip}
           ORDER BY p.sequence
         """
         return conn.execute(sql, lemma_slugs).fetchall()
-    sql = """
+    sql = f"""
       SELECT DISTINCT p.passage_id, p.reference, p.greek_text,
                       p.context_before, p.context_after,
                       w.work_id, w.author, w.title, w.date_estimate,
@@ -103,6 +110,7 @@ def fetch_target_passages(conn, lemma_slugs: list[str] | None):
       FROM passages p
       JOIN occurrences o ON p.passage_id = o.passage_id
       JOIN works w ON p.work_id = w.work_id
+      WHERE 1=1 {skip}
       ORDER BY p.sequence
     """
     return conn.execute(sql).fetchall()
@@ -156,6 +164,8 @@ def main() -> None:
     ap.add_argument("--no-cache", action="store_true")
     ap.add_argument("--dry-run", action="store_true",
                     help="Build prompts and print cost estimate, but do not call API.")
+    ap.add_argument("--force", action="store_true",
+                    help="Re-analyse passages even if a context_records row already exists.")
     args = ap.parse_args()
 
     if not args.lemma and not args.all_lemmata:
@@ -166,7 +176,7 @@ def main() -> None:
 
     conn = connect()
     lemma_slugs = args.lemma if not args.all_lemmata else None
-    passages = fetch_target_passages(conn, lemma_slugs)
+    passages = fetch_target_passages(conn, lemma_slugs, force=args.force)
     if args.limit:
         passages = passages[: args.limit]
 

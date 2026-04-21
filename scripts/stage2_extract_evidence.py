@@ -155,6 +155,8 @@ def main() -> None:
     ap.add_argument("--realtime", action="store_true")
     ap.add_argument("--no-cache", action="store_true")
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--force", action="store_true",
+                    help="Re-extract even for occurrences that already have candidate_labels rows.")
     args = ap.parse_args()
 
     if not args.lemma and not args.all_lemmata:
@@ -166,11 +168,14 @@ def main() -> None:
 
     conn = connect()
 
-    where = ""
+    clauses = []
     params: list = []
     if args.lemma:
-        where = f"WHERE o.lemma_slug IN ({','.join('?' for _ in args.lemma)})"
+        clauses.append(f"o.lemma_slug IN ({','.join('?' for _ in args.lemma)})")
         params = list(args.lemma)
+    if not args.force:
+        clauses.append("o.occurrence_id NOT IN (SELECT occurrence_id FROM candidate_labels)")
+    where = f"WHERE {' AND '.join(clauses)}" if clauses else ""
     sql = f"""
       SELECT o.occurrence_id, o.lemma_slug, o.surface_form,
              p.passage_id, p.reference, p.greek_text,
