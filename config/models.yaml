@@ -1,0 +1,61 @@
+# OpenAI model tier mapping per pipeline stage.
+#
+# The principle: reasoning-heavy stages use the frontier model;
+# bulk classification uses a cheap mini tier once the inventory
+# is stable. A premium tier is reserved for high-stakes passes
+# (philological synthesis, optionally metre analysis on verse).
+#
+# All stages default to the Batch API (50% discount, 24h turnaround)
+# and to prompt caching on repeated system prompts and inventories
+# (up to 90% off cached-input tokens on gpt-5.4).
+#
+# Override at the CLI with --model <id> --no-batch --no-cache.
+
+stages:
+
+  stage1_analyze_context:
+    model: "gpt-5.4"
+    premium_model: "gpt-5.4-pro"     # optional: reroute verse passages
+    premium_trigger: "metre == dactylic_hexameter or metre == iambic_trimeter"
+    batch: true
+    cache: true
+    # Per-passage: register, metre, source nature, gold-notes mining.
+    # Input ≈ 3.5K tokens (passage + context window + any notes + system prompt)
+    # Output ≈ 600 tokens (structured JSON)
+
+  stage2_extract_evidence:
+    model: "gpt-5.4"
+    batch: true
+    cache: true
+    # Per-occurrence: deep sense extraction from Greek + English + notes
+    #                 + Stage-1 context record.
+    # Input ≈ 4K tokens; output ≈ 300 tokens.
+
+  stage3_build_inventory:
+    model: "gpt-5.4-pro"
+    batch: false                     # low volume (10 calls), want low latency
+    cache: true
+    # Per-lemma: synthesise candidate senses into clean inventory.
+    # Input ≈ 20–25K tokens; output ≈ 1.5–2K tokens. Only ~10 calls.
+
+  stage4_bulk_classify:
+    model: "gpt-5.4-mini"
+    batch: true
+    cache: true
+    # Per-occurrence: pick from established inventory.
+    # Input ≈ 2K tokens; output ≈ 100 tokens.
+
+# Cost ceilings (USD) — the scripts check these and refuse to proceed
+# if a planned run would exceed the limit without --confirm-cost.
+cost_ceilings:
+  stage1_analyze_context: 50.00
+  stage2_extract_evidence: 100.00
+  stage3_build_inventory: 20.00
+  stage4_bulk_classify: 50.00
+
+# Fallback models if the primary SKU is unavailable (e.g. during rollout).
+fallbacks:
+  "gpt-5.4-pro": "gpt-5.4"
+  "gpt-5.4": "gpt-4.1"
+  "gpt-5.4-mini": "gpt-4.1-mini"
+  "gpt-5.4-nano": "gpt-4.1-nano"

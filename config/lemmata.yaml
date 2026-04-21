@@ -1,0 +1,210 @@
+# Ten target lemmata for the showcase pipeline.
+#
+# Chosen to span the five semantic domains where diachronic sense
+# change is most visible in Ancient Greek:
+#
+#   institutional   νόμος, δίκη (and λόγος in later usage)
+#   cosmological    κόσμος, φύσις
+#   ethical         ἀρετή
+#   religious       θεός, ψυχή (psychological/religious boundary)
+#   body / concrete σῶμα
+#   intellectual    λόγος, τέχνη
+#
+# Each entry carries the Greek headword, a romanised slug, the
+# reconstructed PIE root (where agreed), a primary semantic-domain
+# tag, an expected diachronic pattern, and a preliminary sense
+# sketch. The pipeline refines the sense sketch; the other fields
+# are inputs to prompt construction.
+
+lemmata:
+
+  - lemma_greek: "λόγος"
+    slug: "logos"
+    pie_root: "*leǵ-"           # to collect, gather; later, to speak
+    pie_gloss: "to collect, gather, speak"
+    domain_primary: "intellectual"
+    domain_secondary: ["discourse", "institutional"]
+    expected_pattern: "persistent_polysemy_with_domain_specialization"
+    wiktionary_page: "λόγος"
+    lsj_entry: "λόγος"
+    seed_senses:
+      - "word, speech"
+      - "account, narrative"
+      - "reason, rational principle"
+      - "ratio, proportion"
+      - "argument, thesis"
+      - "divine Word (Koine theological)"
+    rationale: >
+      Massively polysemous across all periods. Central to philosophy,
+      rhetoric, theology. Excellent stress test for distinguishing
+      genuine polysemy from contextual flexibility.
+
+  - lemma_greek: "κόσμος"
+    slug: "kosmos"
+    pie_root: "*ḱens-"           # to proclaim, set in order (tentative)
+    pie_gloss: "to set in order, arrange"
+    domain_primary: "cosmological"
+    domain_secondary: ["ethical", "institutional"]
+    expected_pattern: "broadening_and_abstraction"
+    wiktionary_page: "κόσμος"
+    lsj_entry: "κόσμος"
+    seed_senses:
+      - "order, arrangement"
+      - "adornment, decoration"
+      - "decorum, propriety"
+      - "world, universe"
+      - "office-holder (rare, Cretan)"
+    rationale: >
+      Dramatic shift from concrete order / adornment to abstract
+      world-order / universe, consolidated in Pythagorean and Platonic
+      texts. Rich commentary tradition.
+
+  - lemma_greek: "ψυχή"
+    slug: "psyche"
+    pie_root: "*bʰes-"           # to breathe (via ψύχω "to blow, breathe")
+    pie_gloss: "to breathe, blow"
+    domain_primary: "body_soul"
+    domain_secondary: ["religious", "intellectual"]
+    expected_pattern: "gradual_drift_and_domain_specialization"
+    wiktionary_page: "ψυχή"
+    lsj_entry: "ψυχή"
+    seed_senses:
+      - "breath, life-force"
+      - "ghost, shade of the dead"
+      - "soul, self"
+      - "seat of thought and feeling"
+      - "immortal soul (philosophical)"
+    rationale: >
+      Homeric "breath leaving at death" gives way to classical
+      "soul / self / mind" and then to the philosophical immortal soul.
+      Well-documented trajectory spanning Homer through Plotinus.
+
+  - lemma_greek: "νόμος"
+    slug: "nomos"
+    pie_root: "*nem-"            # to distribute, allot
+    pie_gloss: "to take, distribute, allot"
+    domain_primary: "institutional"
+    domain_secondary: ["ethical"]
+    expected_pattern: "narrowing_and_institutionalization"
+    wiktionary_page: "νόμος"
+    lsj_entry: "νόμος"
+    seed_senses:
+      - "custom, convention"
+      - "law, statute"
+      - "musical mode or melody"
+      - "law (of nature, philosophical)"
+    rationale: >
+      Custom → statute → law-of-nature. Central to the nomos-physis
+      debate. Highest measured Archaic → Classical drift in our
+      parent project (0.137).
+
+  - lemma_greek: "δίκη"
+    slug: "dike"
+    pie_root: "*deyḱ-"           # to show, point out
+    pie_gloss: "to show, point out, indicate"
+    domain_primary: "ethical"
+    domain_secondary: ["institutional"]
+    expected_pattern: "abstraction_with_genre_split"
+    wiktionary_page: "δίκη"
+    lsj_entry: "δίκη"
+    seed_senses:
+      - "custom, usage"
+      - "lawsuit, legal proceeding"
+      - "judgment, penalty"
+      - "justice, right (abstract)"
+      - "personified Justice"
+    rationale: >
+      Concrete "judgment / legal proceeding" → abstract "justice".
+      Strong genre split (legal vs. poetic). Cognates with δίκαιος,
+      δείκνυμι.
+
+  - lemma_greek: "ἀρετή"
+    slug: "arete"
+    pie_root: "*h₂er-"           # to fit, join (via ἄριστος)
+    pie_gloss: "to fit, join; excellence"
+    domain_primary: "ethical"
+    domain_secondary: ["martial"]
+    expected_pattern: "narrowing_and_moralization"
+    wiktionary_page: "ἀρετή"
+    lsj_entry: "ἀρετή"
+    seed_senses:
+      - "excellence, prowess (martial)"
+      - "merit, worth"
+      - "virtue (ethical)"
+      - "efficacy, fitness (of things)"
+    rationale: >
+      Homeric martial excellence → Socratic/Aristotelian ethical
+      virtue. Key test case for cultural-semantic change.
+
+  - lemma_greek: "φύσις"
+    slug: "physis"
+    pie_root: "*bʰuh₂-"          # to grow, become
+    pie_gloss: "to grow, become, be"
+    domain_primary: "cosmological"
+    domain_secondary: ["intellectual"]
+    expected_pattern: "broadening_and_abstraction"
+    wiktionary_page: "φύσις"
+    lsj_entry: "φύσις"
+    seed_senses:
+      - "growth, origin"
+      - "natural form, constitution"
+      - "nature of a thing"
+      - "Nature (cosmic, philosophical)"
+    rationale: >
+      Counterpart to νόμος. Develops from concrete "growth / origin"
+      to cosmic "Nature". Central to Presocratic and Platonic vocabulary.
+
+  - lemma_greek: "τέχνη"
+    slug: "techne"
+    pie_root: "*tetḱ-"           # to weave, construct
+    pie_gloss: "to weave, construct, produce"
+    domain_primary: "intellectual"
+    domain_secondary: ["craft"]
+    expected_pattern: "stable_core_with_register_variation"
+    wiktionary_page: "τέχνη"
+    lsj_entry: "τέχνη"
+    seed_senses:
+      - "craft, skill"
+      - "art, systematic method"
+      - "cunning, artifice"
+      - "treatise (metonymic)"
+    rationale: >
+      Relatively stable core but strong register variation. Good
+      contrast case against rapidly changing words.
+
+  - lemma_greek: "θεός"
+    slug: "theos"
+    pie_root: "*dʰéh₁s-"         # (not *dyeu-: see Beekes for discussion)
+    pie_gloss: "(uncertain; distinct from Lat. deus)"
+    domain_primary: "religious"
+    domain_secondary: []
+    expected_pattern: "stable_denotation_with_register_shift"
+    wiktionary_page: "θεός"
+    lsj_entry: "θεός"
+    seed_senses:
+      - "god, deity (polytheistic)"
+      - "God (monotheistic, LXX / NT)"
+      - "divine, godlike (predicative)"
+    rationale: >
+      Stable denotation across periods, but profound register and
+      theological shift in Koine. Good archaising / Christianising
+      test case.
+
+  - lemma_greek: "σῶμα"
+    slug: "soma"
+    pie_root: "(uncertain)"      # possibly *tenh₂- "to stretch"; debated
+    pie_gloss: "(disputed)"
+    domain_primary: "body_soul"
+    domain_secondary: ["concrete"]
+    expected_pattern: "broadening"
+    wiktionary_page: "σῶμα"
+    lsj_entry: "σῶμα"
+    seed_senses:
+      - "corpse, dead body"
+      - "living body"
+      - "person (metonymic)"
+      - "body (philosophical, contrasted with ψυχή)"
+    rationale: >
+      Homeric "corpse" → classical "living body" → philosophical
+      body-as-opposed-to-soul. Tests whether the pipeline can handle
+      an earlier sense that is narrower and darker than the later one.
