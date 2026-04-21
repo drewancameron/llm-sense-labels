@@ -14,6 +14,7 @@ outputs/context_records/
 outputs/candidate_labels/
 outputs/bulk_labels/
 outputs/batch_jobs/
+outputs/*.log
 
 # Keep the curated reference inventory under version control
 !outputs/reference_sense_inventory.json
