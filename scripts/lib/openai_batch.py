@@ -143,7 +143,7 @@ class BatchBuilder:
                         {"role": "system", "content": req.system},
                         {"role": "user", "content": req.user},
                     ],
-                    "max_tokens": req.max_tokens,
+                    "max_completion_tokens": req.max_tokens,
                     "temperature": req.temperature,
                 }
                 if req.response_format:
@@ -228,7 +228,7 @@ class BatchBuilder:
                     {"role": "system", "content": req.system},
                     {"role": "user", "content": req.user},
                 ],
-                "max_tokens": req.max_tokens,
+                "max_completion_tokens": req.max_tokens,
                 "temperature": req.temperature,
             }
             if req.response_format:
