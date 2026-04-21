@@ -51,20 +51,20 @@ TRANSLATIONS: list[PerseusTranslation] = [
         tei_url="https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/master/data/tlg0012/tlg001/tlg0012.tlg001.perseus-eng4.xml",
     ),
     PerseusTranslation(
-        translation_work_id="tlg0011.tlg002.perseus-eng1",
+        translation_work_id="tlg0011.tlg002.perseus-eng2",
         source_greek_work_id="tlg0011.tlg002.perseus-grc2",
         translator="Francis Storr",
         date_estimate="1912",
         license_status="public_domain",
-        tei_url="https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/master/data/tlg0011/tlg002/tlg0011.tlg002.perseus-eng1.xml",
+        tei_url="https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/master/data/tlg0011/tlg002/tlg0011.tlg002.perseus-eng2.xml",
     ),
     PerseusTranslation(
-        translation_work_id="tlg0016.tlg001.perseus-eng1",
+        translation_work_id="tlg0016.tlg001.perseus-eng2",
         source_greek_work_id="tlg0016.tlg001.perseus-grc2",
         translator="A. D. Godley",
         date_estimate="1920",
         license_status="public_domain",
-        tei_url="https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/master/data/tlg0016/tlg001/tlg0016.tlg001.perseus-eng1.xml",
+        tei_url="https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/master/data/tlg0016/tlg001/tlg0016.tlg001.perseus-eng2.xml",
     ),
     PerseusTranslation(
         translation_work_id="tlg0059.tlg002.perseus-eng2",
@@ -73,6 +73,14 @@ TRANSLATIONS: list[PerseusTranslation] = [
         date_estimate="1871",
         license_status="public_domain",
         tei_url="https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/master/data/tlg0059/tlg002/tlg0059.tlg002.perseus-eng2.xml",
+    ),
+    PerseusTranslation(
+        translation_work_id="tlg0031.tlg001.perseus-eng2",
+        source_greek_work_id="tlg0031.tlg001.perseus-grc2",
+        translator="King James (KJV)",
+        date_estimate="1611",
+        license_status="public_domain",
+        tei_url="https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/master/data/tlg0031/tlg001/tlg0031.tlg001.perseus-eng2.xml",
     ),
 ]
 
@@ -105,7 +113,7 @@ def _english_passages(tei_bytes: bytes) -> dict[str, str]:
         cur: etree._Element | None = el
         while cur is not None:
             n = cur.get("n")
-            if n:
+            if n and ":" not in n:  # skip URN-style outer @n
                 chain.append(n)
             cur = cur.getparent()
         chain.reverse()
@@ -133,9 +141,34 @@ def _english_passages(tei_bytes: bytes) -> dict[str, str]:
     return out
 
 
+def _ref_tuple(ref: str) -> tuple:
+    """Parse a reference like '1.40' into a tuple for ordered comparison.
+
+    Non-integer segments (e.g. Stephanus '17b') are returned as-is so
+    that segments stay comparable within a book. The tuple is used to
+    find the nearest lower English reference when the English corpus is
+    at a coarser granularity than the Greek.
+    """
+    out = []
+    for seg in ref.split("."):
+        try:
+            out.append((0, int(seg)))  # numeric segments sort first
+        except ValueError:
+            out.append((1, seg))  # string segments after numerics
+    return tuple(out)
+
+
 def align_all(conn: sqlite3.Connection) -> int:
     """For each translation, match its refs against Greek passage refs
     and insert translation rows.
+
+    Three match strategies, in order of decreasing confidence:
+      1. Exact ref match: Greek '1.1' == English '1.1'.
+      2. Prefix fallback: Greek '1.1.1' → English '1.1'.
+      3. Range fallback: for verse works where the English is at every-
+         N-lines granularity (e.g. Homer Butler's Iliad has English refs
+         '1.1', '1.40', '1.80', …), match each Greek line to the
+         largest English ref ≤ it within the same first-level book.
     """
     total = 0
     for tr in TRANSLATIONS:
@@ -148,8 +181,15 @@ def align_all(conn: sqlite3.Connection) -> int:
         if not en_by_ref:
             continue
 
-        # Greek passages use 'passage_id' like 'tlg0012.1.1'; the raw
-        # reference is p.reference, e.g. '1.1'. Match on that.
+        # Pre-compute a sorted list of (tuple, ref, text) for each
+        # top-level book (first ref segment) for range fallback.
+        en_by_book: dict[str, list[tuple]] = {}
+        for ref, text in en_by_ref.items():
+            book = ref.split(".")[0] if "." in ref else ref
+            en_by_book.setdefault(book, []).append((_ref_tuple(ref), ref, text))
+        for book in en_by_book:
+            en_by_book[book].sort()
+
         greek_rows = conn.execute(
             "SELECT passage_id, reference FROM passages WHERE work_id = ?",
             (tr.source_greek_work_id,),
@@ -157,28 +197,48 @@ def align_all(conn: sqlite3.Connection) -> int:
 
         rows = []
         for g in greek_rows:
-            english = en_by_ref.get(g["reference"])
+            gref = g["reference"]
+            english = en_by_ref.get(gref)
+            confidence = 1.0
+
             if not english:
-                # Try relaxed prefix match: English ref may be at a
-                # coarser granularity (e.g. Greek '1.1.1' vs English '1.1').
-                parts = g["reference"].split(".")
+                parts = gref.split(".")
                 for depth in range(len(parts) - 1, 0, -1):
                     english = en_by_ref.get(".".join(parts[:depth]))
                     if english:
+                        confidence = 0.6
                         break
+
+            if not english:
+                # Range fallback (verse works with coarse English).
+                book = gref.split(".")[0] if "." in gref else gref
+                candidates = en_by_book.get(book, [])
+                gt = _ref_tuple(gref)
+                best = None
+                for etpl, eref, etext in candidates:
+                    if etpl <= gt:
+                        best = (eref, etext)
+                    else:
+                        break
+                if best:
+                    english = best[1]
+                    confidence = 0.4
+
             if not english:
                 continue
             rows.append(
                 {
                     "passage_id": g["passage_id"],
                     "translator": tr.translator,
-                    "translation_work_id": None,  # not registered in `works`
+                    "translation_work_id": None,
                     "aligned_text": english,
-                    "alignment_confidence": 1.0 if g["reference"] in en_by_ref else 0.6,
+                    "alignment_confidence": confidence,
                     "license_status": tr.license_status,
                 }
             )
-        total += insert_many(conn, "translations", rows)
+        inserted = insert_many(conn, "translations", rows)
+        total += inserted
+        print(f"  {tr.translator}: {inserted} alignments")
     conn.commit()
     print(f"Inserted {total} aligned translations.")
     return total

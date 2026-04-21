@@ -119,11 +119,17 @@ def populate_lemmata_and_forms(
 
 
 def form_to_lemma_map(conn: sqlite3.Connection) -> dict[str, list[str]]:
-    """Build {surface_norm: [lemma_slug, ...]} map for fast occurrence matching."""
+    """Build {surface_norm: [lemma_slug, ...]} map for fast occurrence matching.
+
+    Deduplicates slugs per norm: several Wiktionary forms (e.g. with and
+    without final sigma variants) can share a normalised form and map
+    back to the same lemma; we don't want to emit two occurrences for
+    that case.
+    """
     rows = conn.execute(
         "SELECT surface_norm, lemma_slug FROM lemma_forms"
     ).fetchall()
-    out: dict[str, list[str]] = {}
+    buckets: dict[str, set[str]] = {}
     for r in rows:
-        out.setdefault(r["surface_norm"], []).append(r["lemma_slug"])
-    return out
+        buckets.setdefault(r["surface_norm"], set()).add(r["lemma_slug"])
+    return {k: sorted(v) for k, v in buckets.items()}

@@ -125,10 +125,16 @@ def _clean_text(s: str) -> str:
 def _text_of(el: etree._Element, ignore_notes: bool = True) -> str:
     """Serialise an element's text content, optionally excluding <note>
     children (to keep note text out of the passage body).
+
+    Skips non-element nodes (comments, processing instructions), whose
+    .tag is a callable rather than a string.
     """
     parts: list[str] = []
 
     def walk(node: etree._Element) -> None:
+        # Skip comments and processing instructions.
+        if not isinstance(node.tag, str):
+            return
         tag = etree.QName(node).localname
         if ignore_notes and tag == "note":
             return
@@ -201,7 +207,11 @@ def parse_work(work: PerseusWork, tei_bytes: bytes) -> tuple[dict, list[dict], l
         cur: etree._Element | None = el
         while cur is not None:
             n = cur.get("n")
-            if n:
+            # Skip URN-style @n attributes on outer elements
+            # (e.g. <text n="urn:cts:greekLit:...">). Only natural
+            # reference components (numeric, Stephanus codes, etc.)
+            # belong in the chain.
+            if n and ":" not in n:
                 chain.append(n)
             cur = cur.getparent()
         chain.reverse()
@@ -221,11 +231,18 @@ def parse_work(work: PerseusWork, tei_bytes: bytes) -> tuple[dict, list[dict], l
                 if not d.findall(f"{{{TEI_NS}}}div")
             ]
 
-    passages_by_id: dict[str, dict] = {}
+    seen_ids: set[str] = set()
     for unit in units:
         sequence += 1
         ref = ref_for(unit)
-        passage_id = f"{work.work_id.split('.')[0]}.{ref}".strip(".")
+        base_id = f"{work.work_id.split('.')[0]}.{ref}".strip(".")
+        # Guarantee uniqueness: Antigone etc. reuse @n numbering across
+        # stanzas, so ref alone is not a primary key. Append sequence on
+        # collision so the human-readable reference remains untouched.
+        passage_id = base_id
+        if passage_id in seen_ids:
+            passage_id = f"{base_id}#{sequence}"
+        seen_ids.add(passage_id)
         greek = _text_of(unit, ignore_notes=True)
         if not greek or len(greek) < 5:
             continue
@@ -239,7 +256,6 @@ def parse_work(work: PerseusWork, tei_bytes: bytes) -> tuple[dict, list[dict], l
             "context_after": None,
             "word_count": len(greek.split()),
         }
-        passages_by_id[passage_id] = row
         passage_rows.append(row)
 
         for note_type, note_text in _extract_notes(unit):
