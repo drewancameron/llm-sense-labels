@@ -1,0 +1,58 @@
+{
+  "_comment": "What Stage 2 (per-occurrence sense extraction) receives. Mirrors the fields required by config/prompts/stage2_extraction.md.",
+  "occurrence": {
+    "occurrence_id": "42",
+    "passage_reference": "tlg0012.1.1",
+    "lemma": "ψυχή",
+    "lemma_slug": "psyche",
+    "surface_form": "ψυχὰς",
+    "char_offset_start": 88,
+    "char_offset_end": 94
+  },
+  "greek_passage": "Μῆνιν ἄειδε θεὰ Πηληϊάδεω Ἀχιλῆος οὐλομένην, ἣ μυρί᾽ Ἀχαιοῖς ἄλγε᾽ ἔθηκε, πολλὰς δ᾽ ἰφθίμους ψυχὰς Ἄιδι προΐαψεν ἡρώων, αὐτοὺς δὲ ἑλώρια τεῦχε κύνεσσιν οἰωνοῖσί τε πᾶσι, Διὸς δ᾽ ἐτελείετο βουλή …",
+  "aligned_translations": [
+    {
+      "translator": "Samuel Butler (1898)",
+      "alignment_confidence": 1.0,
+      "aligned_text": "Sing, O goddess, the anger of Achilles son of Peleus, that brought countless ills upon the Achaeans. Many a brave soul did it send hurrying down to Hades, and many a hero did it yield a prey to dogs and vultures…"
+    },
+    {
+      "translator": "Richmond Lattimore (1951)",
+      "alignment_confidence": 1.0,
+      "aligned_text": "Sing, goddess, the anger of Peleus' son Achilleus and its devastation, which put pains thousandfold upon the Achaians, hurled in their multitudes to the house of Death strong souls of heroes, but gave their bodies to be the delicate feasting of dogs, of all birds…"
+    }
+  ],
+  "attached_notes": [
+    {
+      "note_author": "Perseus TEI (apparatus)",
+      "note_type": "apparatus",
+      "note_text": "ἰφθίμους Ἄιδι] most MSS; Aristarchus marked the line with a diple because of Ἄιδι in the dative of motion."
+    }
+  ],
+  "stage1_context_record": {
+    "register": {"label": "epic", "confidence": 0.99},
+    "metre": {"label": "dactylic_hexameter", "metrical_pressure": "moderate"},
+    "source_nature": {"label": "original", "confidence": 0.95},
+    "author_stance": null,
+    "gold_notes": [
+      {
+        "translator_or_commentator": "Lattimore (translator's preface)",
+        "type": "polysemy_discussion",
+        "target_lemma": "ψυχή",
+        "quote": "In Homer the ψυχή is the breath-soul which leaves the body at the moment of death…",
+        "philological_weight": "high"
+      }
+    ],
+    "period_inferred": "archaic"
+  },
+  "sense_inventory_or_seed": {
+    "source": "seed (inventory-building phase)",
+    "seed_senses": [
+      "breath, life-force",
+      "ghost, shade of the dead",
+      "soul, self",
+      "seat of thought and feeling",
+      "immortal soul (philosophical)"
+    ]
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "lemma": "ψυχή",
+  "lemma_slug": "psyche",
+  "canonical_senses": [
+    {
+      "label": "ghost, shade of the dead",
+      "gloss": "The breath-soul that leaves the body at the moment of death and survives in Hades as a shade; the dominant Homeric sense.",
+      "confidence": "established",
+      "period_notes": "Dominant in Homer and in later literary imitations of Homer; largely displaced by 'soul, self' in Classical prose but retained in poetic and funerary contexts.",
+      "attested_periods": ["archaic", "classical"],
+      "merged_candidate_ids": [1, 2],
+      "register_affinities": ["epic", "lyric", "tragic"],
+      "domain_affinities": ["body_soul", "religious"],
+      "representative_evidence": [
+        {
+          "candidate_id": 1,
+          "evidence_quote": "Many a brave soul did it send hurrying down to Hades (Butler, Il. 1.3)",
+          "source": "Iliad 1.1-7"
+        }
+      ],
+      "notes": "Lattimore's preface note (reproduced in gold_note_relied_upon of candidate 1) is the philological anchor for this sense and was used to exclude 'soul, self' readings in Homeric passages even where a translator used the English word 'soul'."
+    },
+    {
+      "label": "breath, life-force",
+      "gloss": "The breath or animating principle of a living body; the literal etymological sense, and the physiological aspect of the Homeric ψυχή before it has left the body.",
+      "confidence": "established",
+      "period_notes": "Attested from Homer onward; the etymological sense ('to breathe', PIE *bʰes-) is visible throughout.",
+      "attested_periods": ["archaic", "classical", "hellenistic", "koine"],
+      "merged_candidate_ids": [3],
+      "register_affinities": ["epic"],
+      "domain_affinities": ["body_soul"],
+      "representative_evidence": [
+        {
+          "candidate_id": 3,
+          "evidence_quote": "he gasped out his life (Butler, Il. 5.296)",
+          "source": "Iliad 5.296"
+        }
+      ],
+      "notes": "Shares a fuzzy boundary with 'ghost, shade' — the Homeric ψυχή is continuous from 'breath in a living body' through 'breath-soul at the moment of death' to 'shade in Hades'. The three senses are separable but not neatly disjoint."
+    },
+    {
+      "label": "soul, self",
+      "gloss": "The rational, animate soul of a living person; the seat of character, thought, and moral agency. The classical and post-classical dominant sense.",
+      "confidence": "established",
+      "period_notes": "Becomes dominant in Classical philosophical prose (Socrates, Plato); present as the default sense in Hellenistic and Imperial Greek; continues into Koine with theological overlays.",
+      "attested_periods": ["classical", "hellenistic", "imperial", "koine"],
+      "merged_candidate_ids": [4, 5, 6],
+      "register_affinities": ["philosophical", "oratorical", "religious_NT"],
+      "domain_affinities": ["body_soul", "intellectual"],
+      "representative_evidence": [
+        {
+          "candidate_id": 4,
+          "evidence_quote": "take care of your soul (Jowett, Apology 29e)",
+          "source": "Plato, Apology 29e"
+        }
+      ],
+      "notes": "Jowett's commentary on Apology 29e-30a is the key anchor. Candidate 6 (Matt. 6.25) overlaps with the newly proposed 'life' sense — see inventory_notes."
+    },
+    {
+      "label": "life",
+      "gloss": "Life as the thing that can be saved or lost; distinctively Koine and especially common in the Septuagint and New Testament, where ψυχή functions as a near-equivalent of Hebrew נֶפֶשׁ.",
+      "confidence": "probable",
+      "period_notes": "Koine usage; overlaps with 'soul, self' in contexts where the referent is the whole living person.",
+      "attested_periods": ["koine"],
+      "merged_candidate_ids": [7],
+      "register_affinities": ["religious_LXX", "religious_NT"],
+      "domain_affinities": ["body_soul"],
+      "representative_evidence": [
+        {
+          "candidate_id": 7,
+          "evidence_quote": "take no thought for your life, what ye shall eat (Matt. 6.25)",
+          "source": "Gospel of Matthew 6.25"
+        }
+      ],
+      "notes": "Admitted as a candidate beyond the LSJ inventory structure because Koine usage is distinctive enough (and theologically loaded enough) that flattening it into 'soul, self' would obscure a real register shift. A stricter synthesis might treat it as a subsense of 'soul, self' with a Koine register tag."
+    }
+  ],
+  "senses_in_reference_but_unsupported": [
+    {
+      "reference_sense": "seat of thought and feeling (LSJ IV)",
+      "reason": "Not distinguishable from 'soul, self' in our demo corpus at current coverage; the subtler Platonic partition of ψυχή into rational/spirited/appetitive would require Republic IV and would pull the sense into a technical philosophical stratum."
+    },
+    {
+      "reference_sense": "immortal soul (philosophical)",
+      "reason": "Demo corpus does not include Phaedo or Plotinus; would require those sources to establish."
+    }
+  ],
+  "senses_beyond_reference": [
+    {
+      "proposed_label": "life",
+      "rationale": "Koine usage (LXX / NT) is distinct enough to warrant its own label even though LSJ subsumes it under 'breath, life'. Flagged for reviewer attention."
+    }
+  ],
+  "inventory_notes": "Four canonical senses with clear diachronic structure: Homeric 'ghost' + 'breath' → Classical 'soul, self' → Koine 'life / soul' with religious overlay. Gold note from Lattimore's preface was decisive for separating the Homeric senses from the Classical. Demo-corpus coverage is too thin to resolve the Platonic subdivisions (rational / spirited / appetitive); production expansion should add Republic IV and Phaedo to address this. Candidates from Antigone not yet included in this sample but would fall under 'soul, self' with a tragic register tag."
+}

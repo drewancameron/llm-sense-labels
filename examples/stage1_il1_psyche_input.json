@@ -1,0 +1,31 @@
+{
+  "_comment": "What Stage 1 (context analysis) receives as the user-message payload, abbreviated. The system prompt is the content of config/prompts/stage1_context.md.",
+  "passage_record": {
+    "passage_id": "tlg0012.1.1",
+    "reference": "1.1-7",
+    "work": {
+      "work_id": "tlg0012.tlg001.perseus-grc2",
+      "author": "Homer",
+      "title": "Iliad, Book 1",
+      "date_estimate": "c. 750 BCE",
+      "period": "archaic",
+      "genre": "epic"
+    },
+    "greek_text": "Μῆνιν ἄειδε θεὰ Πηληϊάδεω Ἀχιλῆος οὐλομένην, ἣ μυρί᾽ Ἀχαιοῖς ἄλγε᾽ ἔθηκε, πολλὰς δ᾽ ἰφθίμους ψυχὰς Ἄιδι προΐαψεν ἡρώων, αὐτοὺς δὲ ἑλώρια τεῦχε κύνεσσιν οἰωνοῖσί τε πᾶσι, Διὸς δ᾽ ἐτελείετο βουλή, ἐξ οὗ δὴ τὰ πρῶτα διαστήτην ἐρίσαντε Ἀτρεΐδης τε ἄναξ ἀνδρῶν καὶ δῖος Ἀχιλλεύς.",
+    "context_before": null,
+    "context_after": "τίς τ᾽ ἄρ σφωε θεῶν ἔριδι ξυνέηκε μάχεσθαι; Λητοῦς καὶ Διὸς υἱός…"
+  },
+  "target_lemma": {
+    "lemma_greek": "ψυχή",
+    "lemma_slug": "psyche",
+    "surface_form_in_passage": "ψυχὰς"
+  },
+  "attached_notes": [
+    {
+      "note_author": "Perseus TEI (apparatus)",
+      "note_type": "apparatus",
+      "note_text": "ἰφθίμους Ἄιδι] most MSS; Aristarchus marked the line with a diple because of Ἄιδι in the dative of motion."
+    }
+  ],
+  "note_on_usage": "The target lemma's sense is NOT to be analysed in Stage 1 — only the surrounding register, metre, and source nature. The lemma is supplied so the LLM knows which specific surface token anchors any gold-note search."
+}

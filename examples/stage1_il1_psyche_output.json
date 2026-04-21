@@ -1,0 +1,30 @@
+{
+  "passage_id": "tlg0012.1.1",
+  "register": {
+    "label": "epic",
+    "confidence": 0.99,
+    "evidence": "Invocation formula 'Μῆνιν ἄειδε θεὰ' and Ionic-Aeolic epic dialect (Πηληϊάδεω, προΐαψεν, Ἀχαιοῖς); the proem of the Iliad is the paradigm case."
+  },
+  "metre": {
+    "label": "dactylic_hexameter",
+    "metrical_pressure": "moderate",
+    "evidence": "Scan of line 3: πολ- | λὰς δ᾽ ἰ- | φθίμους | ψυχὰς | Ἄιδι προ- | ΐαψεν ‖ — five dactyls + spondaic close. The plural ψυχὰς fills a dactyl (- ∪ ∪), which a singular ψυχήν could not have done; a metrical motivation for the plural form is thus present but non-determining of the sense."
+  },
+  "source_nature": {
+    "label": "original",
+    "confidence": 0.95,
+    "evidence": "Archaic Greek original composition; no parody, quotation, or secondary stylistic frame."
+  },
+  "author_stance": null,
+  "gold_notes": [
+    {
+      "translator_or_commentator": "Lattimore (translator's preface)",
+      "type": "polysemy_discussion",
+      "target_lemma": "ψυχή",
+      "quote": "In Homer the ψυχή is the breath-soul which leaves the body at the moment of death; the classical identification of ψυχή with self, mind, or animate principle is foreign to the epic. I render it throughout Book 1 as 'life' or 'ghost' as context requires, never as 'soul' in the later sense.",
+      "philological_weight": "high"
+    }
+  ],
+  "period_inferred": "archaic",
+  "notes": "A diagnostic passage for the Homeric ψυχή sense. The gold note from Lattimore is exactly the kind of polysemy discussion that should strongly weight downstream sense selection toward 'ghost, shade' and away from Classical 'soul, self'."
+}

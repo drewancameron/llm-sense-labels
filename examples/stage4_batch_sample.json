@@ -1,0 +1,82 @@
+{
+  "_comment": "A small batch of Stage 4 bulk-classification outputs for ψυχή. Each record is the JSON object a single gpt-5.4-mini call emits, against the canonical inventory produced by Stage 3. Bulk classification is cheap and fast; the register/metre signal from Stage 1 is the main mechanism by which near-synonymous senses get disambiguated.",
+  "inventory_in_force": [
+    {"index": 0, "label": "ghost, shade of the dead"},
+    {"index": 1, "label": "breath, life-force"},
+    {"index": 2, "label": "soul, self"},
+    {"index": 3, "label": "life"}
+  ],
+  "classifications": [
+    {
+      "occurrence_id": "42",
+      "lemma": "ψυχή",
+      "chosen_sense_label": "ghost, shade of the dead",
+      "chosen_sense_index": 0,
+      "confidence": 0.96,
+      "register_applied": "epic",
+      "reason": "Butler/Lattimore render as 'souls'; context 'Ἄιδι προΐαψεν' + epic register lock in the Homeric sense.",
+      "fallback_sense_label": "breath, life-force",
+      "fallback_confidence": 0.12
+    },
+    {
+      "occurrence_id": "87",
+      "lemma": "ψυχή",
+      "chosen_sense_label": "ghost, shade of the dead",
+      "chosen_sense_index": 0,
+      "confidence": 0.93,
+      "register_applied": "epic",
+      "reason": "Il. 23.65 — Patroclus' ghost appears to Achilles; translation 'ghost of Patroclus' is decisive.",
+      "fallback_sense_label": null,
+      "fallback_confidence": null
+    },
+    {
+      "occurrence_id": "141",
+      "lemma": "ψυχή",
+      "chosen_sense_label": "soul, self",
+      "chosen_sense_index": 2,
+      "confidence": 0.94,
+      "register_applied": "philosophical",
+      "reason": "Apology 29e; Jowett renders 'soul' and context is Socratic moral self-care. Register 'philosophical' rules out the Homeric sense.",
+      "fallback_sense_label": null,
+      "fallback_confidence": null
+    },
+    {
+      "occurrence_id": "158",
+      "lemma": "ψυχή",
+      "chosen_sense_label": "soul, self",
+      "chosen_sense_index": 2,
+      "confidence": 0.68,
+      "register_applied": "tragic",
+      "reason": "Antigone 559 — Antigone speaks of her ψυχή; tragic register allows either 'life' or 'soul, self'. Choosing 'soul, self' on textual grounds (character's moral self-reference) with a notable fallback.",
+      "fallback_sense_label": "life",
+      "fallback_confidence": 0.29
+    },
+    {
+      "occurrence_id": "203",
+      "lemma": "ψυχή",
+      "chosen_sense_label": "life",
+      "chosen_sense_index": 3,
+      "confidence": 0.81,
+      "register_applied": "religious_NT",
+      "reason": "Matt. 6.25 — context is food and drink; ψυχή glossed by English 'life' rather than 'soul'. Koine register tips the balance from 'soul, self' to 'life'.",
+      "fallback_sense_label": "soul, self",
+      "fallback_confidence": 0.18
+    },
+    {
+      "occurrence_id": "210",
+      "lemma": "ψυχή",
+      "chosen_sense_label": "uncertain",
+      "chosen_sense_index": -1,
+      "confidence": 0.0,
+      "register_applied": "uncertain",
+      "reason": "Matt. 6.25 parallel with no aligned English translation and an empty Stage 1 context record; insufficient evidence to classify. Flagged for re-inspection.",
+      "fallback_sense_label": null,
+      "fallback_confidence": null
+    }
+  ],
+  "observations": [
+    "Three of six classifications hit confidence > 0.9 — these are the cleanest cases and would form training signal for downstream modelling.",
+    "Occurrence 158 (Antigone) illustrates the register-as-tiebreaker pattern the pipeline was designed to exploit.",
+    "Occurrence 210 shows the value of the 'uncertain' escape hatch: rather than force a bad label, Stage 4 records the refusal and flags the passage."
+  ]
+}

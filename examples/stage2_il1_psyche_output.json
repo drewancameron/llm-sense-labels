@@ -1,0 +1,62 @@
+{
+  "occurrence_id": "42",
+  "passage_reference": "tlg0012.1.1",
+  "lemma": "ψυχή",
+  "lemma_slug": "psyche",
+  "surface_form": "ψυχὰς",
+  "context_record_summary": {
+    "register": "epic",
+    "metre": "dactylic_hexameter",
+    "source_nature": "original",
+    "gold_notes_attached": 1
+  },
+  "candidate_senses": [
+    {
+      "sense_label": "ghost, shade of the dead",
+      "sense_label_source": "inventory",
+      "proposed_gloss": null,
+      "confidence": 0.97,
+      "is_primary": true,
+      "evidence": [
+        {
+          "evidence_text": "Many a brave soul did it send hurrying down to Hades",
+          "evidence_type": "translation_rendering",
+          "source_identity": "Samuel Butler (1898)",
+          "directness": "direct"
+        },
+        {
+          "evidence_text": "hurled in their multitudes to the house of Death strong souls of heroes",
+          "evidence_type": "translation_rendering",
+          "source_identity": "Richmond Lattimore (1951)",
+          "directness": "direct"
+        },
+        {
+          "evidence_text": "In Homer the ψυχή is the breath-soul which leaves the body at the moment of death; the classical identification of ψυχή with self, mind, or animate principle is foreign to the epic. I render it throughout Book 1 as 'life' or 'ghost' as context requires, never as 'soul' in the later sense.",
+          "evidence_type": "translator_note",
+          "source_identity": "Lattimore (translator's preface)",
+          "directness": "direct"
+        }
+      ]
+    },
+    {
+      "sense_label": "breath, life-force",
+      "sense_label_source": "inventory",
+      "proposed_gloss": null,
+      "confidence": 0.35,
+      "is_primary": false,
+      "evidence": [
+        {
+          "evidence_text": "The contrast with αὐτοὺς 'the bodies themselves' in the next line suggests a separation of a breath-soul from the body at the moment of death, which shades into 'life-force' in some Homeric contexts. Present as a low-confidence alternative because the destination (Ἄιδι) strongly indicates the post-mortem 'shade' sense.",
+          "evidence_type": "contextual_inference",
+          "source_identity": "internal reasoning",
+          "directness": "inferential"
+        }
+      ]
+    }
+  ],
+  "register_override": null,
+  "metrical_constraint_acknowledged": true,
+  "gold_note_relied_upon": "Lattimore: 'In Homer the ψυχή is the breath-soul which leaves the body at the moment of death … never as \"soul\" in the later sense.'",
+  "notes": "Both translators render consistently as 'souls', but the destination Ἄιδι and the contrast with αὐτοὺς (the bodies) lock in the Homeric 'shade of the dead' sense. Lattimore's preface note is decisive and is quoted in gold_note_relied_upon. Translator disagreement is absent.",
+  "extraction_confidence": 0.95
+}

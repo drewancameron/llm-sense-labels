@@ -1,0 +1,105 @@
+{
+  "_comment": "Stage 3 input for ψυχή, abbreviated. Shows the shape: a list of candidate-sense records from Stage 2, plus scholarly reference material (Wiktionary + gold notes). In reality this list would contain dozens or hundreds of candidates across the five source works; we show ten here for illustration.",
+  "lemma": "ψυχή",
+  "lemma_slug": "psyche",
+  "pie_root": "*bʰes-",
+  "pie_gloss": "to breathe, blow",
+  "expected_pattern": "gradual_drift_and_domain_specialization",
+  "scholarly_reference": {
+    "wiktionary_senses": [
+      "breath",
+      "life, vital force",
+      "ghost, shade of the dead",
+      "soul, self",
+      "mind"
+    ],
+    "gold_notes_digest": [
+      {
+        "passage_id": "tlg0012.1.1",
+        "translator_or_commentator": "Lattimore (translator's preface)",
+        "type": "polysemy_discussion",
+        "quote": "In Homer the ψυχή is the breath-soul which leaves the body at the moment of death; the classical identification of ψυχή with self, mind, or animate principle is foreign to the epic.",
+        "philological_weight": "high"
+      },
+      {
+        "passage_id": "tlg0059.2.29",
+        "translator_or_commentator": "Jowett (Apology commentary)",
+        "type": "diachronic_remark",
+        "quote": "Plato's ψυχή in this dialogue already carries the later sense of the rational soul; Socrates speaks of tending to the soul as one would tend to the body.",
+        "philological_weight": "high"
+      }
+    ]
+  },
+  "candidate_senses_jsonl": [
+    {
+      "candidate_id": 1,
+      "sense_label": "ghost, shade of the dead",
+      "confidence": 0.97,
+      "is_primary": true,
+      "evidence": [
+        {"evidence_text": "Many a brave soul did it send hurrying down to Hades", "source_identity": "Butler", "directness": "direct"}
+      ],
+      "passage": {"reference": "1.1-7", "surface_form": "ψυχὰς", "greek_excerpt": "πολλὰς δ᾽ ἰφθίμους ψυχὰς Ἄιδι προΐαψεν"},
+      "context": {"register": "epic", "metre": "dactylic_hexameter", "source_nature": "original", "period": "archaic"}
+    },
+    {
+      "candidate_id": 2,
+      "sense_label": "ghost, shade of the dead",
+      "confidence": 0.88,
+      "is_primary": true,
+      "evidence": [{"evidence_text": "the ghost of Patroclus", "source_identity": "Butler", "directness": "direct"}],
+      "passage": {"reference": "23.65", "surface_form": "ψυχὴ", "greek_excerpt": "…ψυχὴ Πατροκλῆος δειλοῖο…"},
+      "context": {"register": "epic", "metre": "dactylic_hexameter", "source_nature": "original", "period": "archaic"}
+    },
+    {
+      "candidate_id": 3,
+      "sense_label": "breath, life-force",
+      "confidence": 0.82,
+      "is_primary": true,
+      "evidence": [{"evidence_text": "he gasped out his life", "source_identity": "Butler", "directness": "direct"}],
+      "passage": {"reference": "5.296", "surface_form": "ψυχὴν", "greek_excerpt": "…ψυχὴν ἐκάπυσσε…"},
+      "context": {"register": "epic", "metre": "dactylic_hexameter", "source_nature": "original", "period": "archaic"}
+    },
+    {
+      "candidate_id": 4,
+      "sense_label": "soul, self",
+      "confidence": 0.95,
+      "is_primary": true,
+      "evidence": [
+        {"evidence_text": "take care of your soul", "source_identity": "Jowett", "directness": "direct"},
+        {"evidence_text": "Plato's ψυχή in this dialogue already carries the later sense of the rational soul", "source_identity": "Jowett (commentary)", "directness": "direct"}
+      ],
+      "passage": {"reference": "29e-30a", "surface_form": "ψυχῆς", "greek_excerpt": "…ψυχῆς ὅπως ὡς βελτίστη ἔσται…"},
+      "context": {"register": "philosophical", "metre": "prose", "source_nature": "original", "period": "classical"}
+    },
+    {
+      "candidate_id": 5,
+      "sense_label": "soul, self",
+      "confidence": 0.9,
+      "is_primary": true,
+      "evidence": [{"evidence_text": "nothing is more important than the soul", "source_identity": "Jowett", "directness": "direct"}],
+      "passage": {"reference": "30b", "surface_form": "ψυχῆς", "greek_excerpt": "…τῆς ψυχῆς ἐπιμέλειαν…"},
+      "context": {"register": "philosophical", "metre": "prose", "source_nature": "original", "period": "classical"}
+    },
+    {
+      "candidate_id": 6,
+      "sense_label": "soul, self",
+      "confidence": 0.7,
+      "is_primary": true,
+      "evidence": [{"evidence_text": "he who loses his soul", "source_identity": "anonymous Perseus NT translation", "directness": "direct"}],
+      "passage": {"reference": "Matt.6.25", "surface_form": "ψυχῇ", "greek_excerpt": "…μὴ μεριμνᾶτε τῇ ψυχῇ ὑμῶν…"},
+      "context": {"register": "religious_NT", "metre": "prose", "source_nature": "koine_vernacular", "period": "koine"}
+    },
+    {
+      "candidate_id": 7,
+      "sense_label": "life",
+      "confidence": 0.8,
+      "is_primary": true,
+      "proposed_gloss": "life (as that which can be saved or lost, in koine usage)",
+      "sense_label_source": "__NEW__",
+      "evidence": [{"evidence_text": "take no thought for your life, what ye shall eat", "source_identity": "anonymous Perseus NT translation", "directness": "direct"}],
+      "passage": {"reference": "Matt.6.25", "surface_form": "ψυχῇ", "greek_excerpt": "…μὴ μεριμνᾶτε τῇ ψυχῇ ὑμῶν…"},
+      "context": {"register": "religious_NT", "metre": "prose", "source_nature": "koine_vernacular", "period": "koine"}
+    }
+  ]
+}
