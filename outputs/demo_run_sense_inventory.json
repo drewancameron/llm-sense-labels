@@ -1,0 +1,1624 @@
+{
+  "_meta": {
+    "description": "Live sense inventory produced by the four-stage pipeline on the demo corpus (5 Perseus works, 1,148 Stage-1 context records, 1,580 Stage-2 candidates, 1,237 Stage-4 classifications).",
+    "pipeline_run_date": "2026-04-22",
+    "models": {
+      "stage1": "gpt-5.4",
+      "stage2": "gpt-5.4",
+      "stage3": "gpt-5.4",
+      "stage4": "gpt-5.4-mini"
+    },
+    "total_cost_usd": 30.13,
+    "note": "This is the LIVE pipeline output. For comparison, see reference_sense_inventory.json (human-curated benchmark from the parent project)."
+  },
+  "inventories": {
+    "arete": {
+      "lemma_greek": "ἀρετή",
+      "canonical_senses": [
+        {
+          "sense_index": 0,
+          "label": "excellence, prowess",
+          "gloss": "Excellence displayed in persons, especially prowess, courage, or distinguished performance; in early texts often specifically martial.",
+          "confidence": "established",
+          "attested_periods": [
+            "archaic",
+            "classical"
+          ],
+          "register_affinities": [
+            "epic",
+            "historiographical",
+            "unmarked"
+          ],
+          "domain_affinities": [
+            "heroic",
+            "military",
+            "evaluation",
+            "status"
+          ],
+          "merged_candidate_count": 44,
+          "period_notes": "Strongly attested in Archaic epic and throughout Classical prose. In Homer it is predominantly heroic and martial, though already broader than mere battlefield courage; in Herodotus it remains common for valor, distinguished action, and notable personal excellence.",
+          "notes": "This is the core early sense. Several low-confidence 'merit, worth' labels in heroic and historiographical contexts are better treated as generic personal excellence rather than a separate lexical sense."
+        },
+        {
+          "sense_index": 1,
+          "label": "excellence, quality (of things, animals, places)",
+          "gloss": "Excellence or superior quality belonging to a thing, animal, material, or place; fitness or good properties.",
+          "confidence": "established",
+          "attested_periods": [
+            "archaic",
+            "classical"
+          ],
+          "register_affinities": [
+            "epic",
+            "historiographical"
+          ],
+          "domain_affinities": [
+            "animals",
+            "material culture",
+            "geography",
+            "evaluation"
+          ],
+          "merged_candidate_count": 10,
+          "period_notes": "Clearly attested from Archaic onward. Homer applies the term to horses and competitive capacities; Herodotus extends it naturally to horses, products, lands, and regions.",
+          "notes": "Best treated as a genuine extension of the basic 'excellence' notion to non-human referents, not merely metaphorical usage."
+        },
+        {
+          "sense_index": 2,
+          "label": "virtue, moral excellence",
+          "gloss": "Moral virtue or excellence of soul; in philosophical usage, the central ethical quality or set of such qualities.",
+          "confidence": "established",
+          "attested_periods": [
+            "classical"
+          ],
+          "register_affinities": [
+            "philosophical",
+            "historiographical"
+          ],
+          "domain_affinities": [
+            "ethics",
+            "moral psychology",
+            "civic thought"
+          ],
+          "merged_candidate_count": 14,
+          "period_notes": "Only weakly and ambiguously foreshadowed in some Classical historiographical passages, but fully explicit in Classical philosophical prose. This is the clearest moralized development in the corpus.",
+          "notes": "This sense should be kept distinct from earlier heroic excellence. The corpus strongly supports the expected diachronic moralization."
+        },
+        {
+          "sense_index": 3,
+          "label": "proper excellence, function-specific excellence",
+          "gloss": "The excellence proper to a role, kind, or being; the quality that makes something or someone good at its characteristic function.",
+          "confidence": "probable",
+          "attested_periods": [
+            "classical"
+          ],
+          "register_affinities": [
+            "philosophical"
+          ],
+          "domain_affinities": [
+            "ethics",
+            "teleology",
+            "role theory"
+          ],
+          "merged_candidate_count": 4,
+          "period_notes": "Attested in Classical philosophical prose. This appears as a technical or semi-technical development within philosophical discussion, especially where ἀρετή is analyzed by kind or function.",
+          "notes": "Closely related to ethical virtue, but distinct enough in philosophical semantics to merit separation: here ἀρετή is excellence relative to function, office, or species, not simply moral goodness."
+        },
+        {
+          "sense_index": 4,
+          "label": "public or civic excellence",
+          "gloss": "Distinguished excellence in service to the community or in public life.",
+          "confidence": "probable",
+          "attested_periods": [
+            "classical"
+          ],
+          "register_affinities": [
+            "historiographical",
+            "political"
+          ],
+          "domain_affinities": [
+            "civic life",
+            "politics",
+            "public service"
+          ],
+          "merged_candidate_count": 2,
+          "period_notes": "Attested in Classical historiographical and philosophical contexts. It overlaps with both general excellence and ethical virtue, but some passages point specifically to civic or political distinction.",
+          "notes": "This may be viewed as a contextual specialization of general excellence rather than a fully separate sense; retained because the passage explicitly ties ἀρετή to action 'for the commonwealth'."
+        },
+        {
+          "sense_index": 5,
+          "label": "glory or distinction won by excellence",
+          "gloss": "Excellence conceived as the object of contest or as the distinction won through achievement.",
+          "confidence": "questionable",
+          "attested_periods": [
+            "classical"
+          ],
+          "register_affinities": [
+            "historiographical"
+          ],
+          "domain_affinities": [
+            "competition",
+            "honor culture"
+          ],
+          "merged_candidate_count": 1,
+          "period_notes": "Thinly attested in Classical historiography only, and may reflect translator interpretation rather than a stable lexical sense.",
+          "notes": "Probably better understood as an honor-laden construal of 'excellence' rather than an independent dictionary sense; flagged for review."
+        }
+      ],
+      "stage4_classification_counts": {
+        "excellence, prowess": 32,
+        "excellence, quality (of things, animals, places)": 6,
+        "glory or distinction won by excellence": 1,
+        "proper excellence, function-specific excellence": 3,
+        "public or civic excellence": 1,
+        "virtue, moral excellence": 8
+      }
+    },
+    "dike": {
+      "lemma_greek": "δίκη",
+      "canonical_senses": [
+        {
+          "sense_index": 0,
+          "label": "justice, right, what is just",
+          "gloss": "Justice or right as an abstract norm; what is proper, lawful, or fair.",
+          "confidence": "established",
+          "attested_periods": [
+            "archaic",
+            "classical"
+          ],
+          "register_affinities": [
+            "epic",
+            "tragic",
+            "historiographical",
+            "philosophical"
+          ],
+          "domain_affinities": [
+            "ethics",
+            "normativity",
+            "religious-moral discourse"
+          ],
+          "merged_candidate_count": 12,
+          "period_notes": "Attested already in archaic epic and well represented in Classical tragedy, historiography, and prose. This is the core abstract sense across the corpus.",
+          "notes": "Includes uses such as σὺν δίκῃ and ἡ δίκη where the noun denotes justice as a governing norm rather than a concrete lawsuit or penalty. Some tragic passages may shade toward personification, but the abstract reading is independently secure."
+        },
+        {
+          "sense_index": 1,
+          "label": "judgment, penalty, punishment",
+          "gloss": "A judicial or moral reckoning imposed for wrongdoing; penalty, punishment, or the due consequence of an offense.",
+          "confidence": "established",
+          "attested_periods": [
+            "archaic",
+            "classical"
+          ],
+          "register_affinities": [
+            "epic",
+            "tragic",
+            "historiographical",
+            "philosophical"
+          ],
+          "domain_affinities": [
+            "legal",
+            "retributive",
+            "political",
+            "moral sanction"
+          ],
+          "merged_candidate_count": 47,
+          "period_notes": "Attested in archaic epic and extremely frequent in Classical tragedy, historiography, and prose. In the corpus this is the dominant concrete sense, especially in formulas such as δίκην διδόναι / δοῦναι and related expressions.",
+          "notes": "This sense covers both strictly judicial penalty and broader retributive consequence. Several occurrences translated 'justice' in English are better grouped here when the Greek idiom clearly means 'pay the penalty' or 'suffer punishment'."
+        },
+        {
+          "sense_index": 2,
+          "label": "lawsuit, case at law, legal proceeding",
+          "gloss": "A lawsuit, legal case, or matter brought for adjudication.",
+          "confidence": "established",
+          "attested_periods": [
+            "classical"
+          ],
+          "register_affinities": [
+            "historiographical",
+            "philosophical",
+            "tragic"
+          ],
+          "domain_affinities": [
+            "forensic",
+            "institutional law"
+          ],
+          "merged_candidate_count": 11,
+          "period_notes": "Securely attested in Classical prose and tragedy, especially in historiographical and philosophical legal contexts. Not supported by the archaic epic evidence in this corpus.",
+          "notes": "This is the institutional/legal-procedural sense: 'case', 'suit', 'trial'. Some low-confidence candidates attached to δίκην διδόναι were not merged here, since those formulae usually point instead to penalty."
+        },
+        {
+          "sense_index": 3,
+          "label": "reparation, satisfaction, restitution",
+          "gloss": "Compensation or satisfaction demanded or rendered for a wrong done.",
+          "confidence": "established",
+          "attested_periods": [
+            "classical"
+          ],
+          "register_affinities": [
+            "historiographical"
+          ],
+          "domain_affinities": [
+            "diplomatic",
+            "compensatory justice",
+            "interstate redress"
+          ],
+          "merged_candidate_count": 9,
+          "period_notes": "Strongly attested in Classical historiographical prose, especially Herodotean diplomatic and retaliatory contexts. In this corpus it appears as a distinct practical-legal subtype beside simple 'penalty'.",
+          "notes": "Although many upstream candidates labeled these passages 'judgment, penalty', the direct renderings 'reparation', 'atonement', 'restitution', and 'compensation' justify separating a compensatory sense. This fits the Herodotean genre split well."
+        },
+        {
+          "sense_index": 4,
+          "label": "personified Justice (Δίκη)",
+          "gloss": "Justice conceived as a divine or quasi-divine power, sometimes explicitly personified.",
+          "confidence": "probable",
+          "attested_periods": [
+            "classical"
+          ],
+          "register_affinities": [
+            "tragic",
+            "religious-poetic",
+            "quoted_oracular"
+          ],
+          "domain_affinities": [
+            "mythic",
+            "religious",
+            "moral theology"
+          ],
+          "merged_candidate_count": 6,
+          "period_notes": "Attested in Classical tragedy and in quoted/oracular material in historiography. The corpus supports personification especially where Δίκη is capitalized or acts as an agent.",
+          "notes": "This should be kept distinct from the abstract sense only where the diction strongly suggests agency, divinity, or cultic-poetic personification. Some tragic examples remain borderline between abstraction and personification."
+        },
+        {
+          "sense_index": 5,
+          "label": "custom, manner, proper way",
+          "gloss": "Customary way, proper manner, or what accords with accepted rule.",
+          "confidence": "questionable",
+          "attested_periods": [
+            "archaic"
+          ],
+          "register_affinities": [
+            "epic"
+          ],
+          "domain_affinities": [
+            "custom",
+            "social norm"
+          ],
+          "merged_candidate_count": 2,
+          "period_notes": "Thinly supported and confined to a few archaic epic inferences; the corpus does not provide strong direct translation evidence for this sense.",
+          "notes": "Wiktionary lists 'custom, manner, fashion', and the epic candidates gesture in that direction, but the present evidence is weak and partly inferential. Human review is advisable before treating this as securely established from the pilot corpus."
+        }
+      ],
+      "stage4_classification_counts": {
+        "judgment, penalty, punishment": 25,
+        "justice, right, what is just": 13,
+        "lawsuit, case at law, legal proceeding": 6,
+        "personified Justice (Δίκη)": 4,
+        "reparation, satisfaction, restitution": 21
+      }
+    },
+    "kosmos": {
+      "lemma_greek": "κόσμος",
+      "canonical_senses": [
+        {
+          "sense_index": 0,
+          "label": "order, arrangement",
+          "gloss": "Orderly arrangement, proper disposition, regular sequence, or organized formation.",
+          "confidence": "established",
+          "attested_periods": [
+            "archaic",
+            "classical"
+          ],
+          "register_affinities": [
+            "epic",
+            "historiographical",
+            "unmarked"
+          ],
+          "domain_affinities": [
+            "social order",
+            "military",
+            "ritual",
+            "practical arrangement"
+          ],
+          "merged_candidate_count": 23,
+          "period_notes": "Strongly attested in Archaic epic and Classical prose; this is the oldest and structurally central sense in the corpus. It covers physical arrangement, orderly procedure, battle formation, and the adverbial/prepositional uses κατὰ κόσμον / σὺν κόσμῳ / οὐδενὶ κόσμῳ.",
+          "notes": "This sense subsumes several weakly separated upstream labels such as 'in proper order / in formation / regularly'. Some archaic examples are only inferential because the translation omits the phrase, but the formulaic Greek strongly supports the sense."
+        },
+        {
+          "sense_index": 1,
+          "label": "decorum, propriety, due measure",
+          "gloss": "What is fitting, proper, becoming, or done with due restraint.",
+          "confidence": "established",
+          "attested_periods": [
+            "archaic",
+            "classical"
+          ],
+          "register_affinities": [
+            "epic",
+            "historiographical",
+            "ethical"
+          ],
+          "domain_affinities": [
+            "ethics",
+            "social conduct",
+            "behavior"
+          ],
+          "merged_candidate_count": 7,
+          "period_notes": "Attested already in Archaic epic in phrases like οὐ κατὰ κόσμον and well represented in Classical prose, where it shades into moral propriety and moderation.",
+          "notes": "This is distinct from mere spatial or tactical arrangement: it denotes normative order as propriety, seemliness, or moderation. Candidate 1330 is a narrower contextual realization ('measure, restraint in eating') and is best treated as a subcase of the broader propriety/measure sense."
+        },
+        {
+          "sense_index": 2,
+          "label": "adornment, ornament, finery",
+          "gloss": "Adornment or decorative equipment; finery, ornament, or embellishing attire/object.",
+          "confidence": "established",
+          "attested_periods": [
+            "archaic",
+            "classical"
+          ],
+          "register_affinities": [
+            "epic",
+            "historiographical"
+          ],
+          "domain_affinities": [
+            "dress",
+            "material culture",
+            "luxury"
+          ],
+          "merged_candidate_count": 7,
+          "period_notes": "Clearly attested from Archaic epic onward and frequent in Classical historiographical prose. The sense includes personal adornment, decorative goldwork, and by extension splendid furnishings.",
+          "notes": "Candidate 916 ('furnishings') is somewhat broader than personal ornament, but still fits the semantic field of decorative equipment rather than pure arrangement."
+        },
+        {
+          "sense_index": 3,
+          "label": "constitution, established order, regime",
+          "gloss": "An established civic or institutional order, especially a political constitution or courtly system.",
+          "confidence": "established",
+          "attested_periods": [
+            "classical"
+          ],
+          "register_affinities": [
+            "historiographical",
+            "political"
+          ],
+          "domain_affinities": [
+            "government",
+            "institutions"
+          ],
+          "merged_candidate_count": 1,
+          "period_notes": "Securely attested in Classical historiographical prose. This reflects abstraction from general 'order' to institutional and political order.",
+          "notes": "Candidate 552 is related but broader: Deioces 'established this order' could be read as institutional arrangement generally. It has been kept under the core 'order, arrangement' sense because the evidence does not force a specifically constitutional reading."
+        },
+        {
+          "sense_index": 4,
+          "label": "splendour, display, pomp",
+          "gloss": "Impressive outward show, magnificence, or pomp produced by adornment and wealth.",
+          "confidence": "probable",
+          "attested_periods": [
+            "classical"
+          ],
+          "register_affinities": [
+            "historiographical"
+          ],
+          "domain_affinities": [
+            "courtly display",
+            "luxury",
+            "appearance"
+          ],
+          "merged_candidate_count": 2,
+          "period_notes": "Only clearly suggested in Classical prose; likely a contextual development from 'adornment' toward collective display and magnificence.",
+          "notes": "This may be treated by some lexica as an extension of 'ornament/adornment' rather than a separate sense. It is separated here because the referent is not a discrete ornament but aggregate magnificence."
+        },
+        {
+          "sense_index": 5,
+          "label": "honour, credit, distinction",
+          "gloss": "Honour or distinction conferred by something admirable or fitting.",
+          "confidence": "questionable",
+          "attested_periods": [
+            "archaic"
+          ],
+          "register_affinities": [
+            "epic"
+          ],
+          "domain_affinities": [
+            "value judgment",
+            "prestige"
+          ],
+          "merged_candidate_count": 1,
+          "period_notes": "Very thinly attested in the present corpus, with only one weak Archaic candidate and no direct translation support.",
+          "notes": "Included for review because Wiktionary lists 'honour, credit', but the present evidence is weak and inferential."
+        },
+        {
+          "sense_index": 6,
+          "label": "world, universe",
+          "gloss": "The world as the inhabited or created order; the earthly world in its totality.",
+          "confidence": "established",
+          "attested_periods": [
+            "koine"
+          ],
+          "register_affinities": [
+            "religious_NT",
+            "koine"
+          ],
+          "domain_affinities": [
+            "cosmological",
+            "religious"
+          ],
+          "merged_candidate_count": 8,
+          "period_notes": "Attested only in the Koine New Testament material in this corpus. This is the major later broadening/abstraction expected for κόσμος, moving from 'order' to the ordered world as a whole.",
+          "notes": "In these NT passages the sense is not merely 'order' but the total world-order, often effectively 'the world' in a theological register."
+        }
+      ],
+      "stage4_classification_counts": {
+        "adornment, ornament, finery": 8,
+        "constitution, established order, regime": 1,
+        "decorum, propriety, due measure": 9,
+        "order, arrangement": 16,
+        "splendour, display, pomp": 1,
+        "world, universe": 8
+      }
+    },
+    "logos": {
+      "lemma_greek": "λόγος",
+      "canonical_senses": [
+        {
+          "sense_index": 0,
+          "label": "word, speech, utterance",
+          "gloss": "A word, saying, speech, or verbal expression; also what someone says in direct interaction.",
+          "confidence": "established",
+          "attested_periods": [
+            "archaic",
+            "classical",
+            "koine"
+          ],
+          "register_affinities": [
+            "epic",
+            "tragic",
+            "historiographical",
+            "philosophical",
+            "religious_NT"
+          ],
+          "domain_affinities": [
+            "discourse",
+            "dialogue",
+            "rhetoric"
+          ],
+          "merged_candidate_count": 146,
+          "period_notes": "Strongly attested in Archaic epic, Classical tragedy/prose/philosophy, and Koine narrative; the most persistent and basic verbal sense.",
+          "notes": "Includes singular/plural uses from single word to full speech. Some instances verge toward 'argument' or 'message', but the core verbal sense is primary."
+        },
+        {
+          "sense_index": 1,
+          "label": "account, narrative, story",
+          "gloss": "An account, story, tale, report, or narrative thread, often in historiographical framing.",
+          "confidence": "established",
+          "attested_periods": [
+            "classical",
+            "koine"
+          ],
+          "register_affinities": [
+            "historiographical",
+            "religious_NT"
+          ],
+          "domain_affinities": [
+            "narrative",
+            "tradition",
+            "historiography"
+          ],
+          "merged_candidate_count": 145,
+          "period_notes": "Overwhelmingly attested in Classical historiography, especially Herodotus; continues into Koine narrative contexts. Not securely evidenced in the Archaic material here.",
+          "notes": "This includes both discrete tales ('story, legend') and the larger historiographical 'account' or narrative thread ('return to my λόγος'). Sacred legend is treated as a subtype here, not a separate canonical sense."
+        },
+        {
+          "sense_index": 2,
+          "label": "argument, thesis, line of reasoning",
+          "gloss": "An argument, contention, thesis, or articulated line of reasoning.",
+          "confidence": "established",
+          "attested_periods": [
+            "classical",
+            "koine"
+          ],
+          "register_affinities": [
+            "tragic",
+            "historiographical",
+            "philosophical",
+            "religious_NT"
+          ],
+          "domain_affinities": [
+            "rhetoric",
+            "dialectic",
+            "deliberation"
+          ],
+          "merged_candidate_count": 41,
+          "period_notes": "Well attested in Classical prose and philosophy; especially visible in argumentative and deliberative contexts. Continues in Koine but less prominently in this corpus.",
+          "notes": "Distinct from mere 'speech': here λόγος is the content as argument or doctrinal proposition. Includes 'doctrine' where the emphasis is on propositional claim rather than narrative."
+        },
+        {
+          "sense_index": 3,
+          "label": "reason, rational consideration, judgment",
+          "gloss": "Reason, rational reflection, explanatory ground, or what reason/judgment dictates.",
+          "confidence": "established",
+          "attested_periods": [
+            "classical",
+            "koine"
+          ],
+          "register_affinities": [
+            "historiographical",
+            "philosophical",
+            "religious_NT"
+          ],
+          "domain_affinities": [
+            "reasoning",
+            "judgment",
+            "reflection"
+          ],
+          "merged_candidate_count": 32,
+          "period_notes": "Strongly Classical, especially in Herodotean and philosophical prose; persists into Koine in legal/moral 'ground' uses.",
+          "notes": "Covers both inward reflection ('give oneself λόγον') and objective rational ground ('reason proves', 'there is sense in it'). Kept distinct from 'argument' as public/discursive formulation."
+        },
+        {
+          "sense_index": 4,
+          "label": "account, reckoning, answer rendered",
+          "gloss": "An account rendered, reckoning, audit, or answer for one's actions.",
+          "confidence": "established",
+          "attested_periods": [
+            "classical",
+            "koine"
+          ],
+          "register_affinities": [
+            "historiographical",
+            "religious_NT"
+          ],
+          "domain_affinities": [
+            "administrative",
+            "legal",
+            "financial"
+          ],
+          "merged_candidate_count": 6,
+          "period_notes": "Attested in Classical historiographical prose and clearly in Koine legal/financial contexts.",
+          "notes": "This is not narrative 'account' but reckoning/accountability. The legal-moral and financial uses converge strongly."
+        },
+        {
+          "sense_index": 5,
+          "label": "regard, notice, account taken of",
+          "gloss": "Regard, heed, notice, or consideration given to a person, thing, or matter.",
+          "confidence": "established",
+          "attested_periods": [
+            "classical"
+          ],
+          "register_affinities": [
+            "historiographical"
+          ],
+          "domain_affinities": [
+            "evaluation",
+            "attention",
+            "social interaction"
+          ],
+          "merged_candidate_count": 25,
+          "period_notes": "Very frequent in Classical prose, especially in idioms such as λόγον ποιεῖσθαι / οὐδένα λόγον ποιεῖσθαι; continues into later material conceptually but our evidence is chiefly Classical.",
+          "notes": "A highly idiomatic and important prose sense. Related to but distinct from 'repute' and from 'reckoning/account'."
+        },
+        {
+          "sense_index": 6,
+          "label": "report, rumor, hearsay, common talk",
+          "gloss": "What is said or reported; rumor, hearsay, circulating report, or public talk.",
+          "confidence": "established",
+          "attested_periods": [
+            "classical",
+            "koine"
+          ],
+          "register_affinities": [
+            "historiographical",
+            "religious_NT"
+          ],
+          "domain_affinities": [
+            "report",
+            "reputation",
+            "hearsay"
+          ],
+          "merged_candidate_count": 10,
+          "period_notes": "Well attested in Classical historiography and continues in Koine narrative.",
+          "notes": "Separated from 'account, narrative' because these uses emphasize circulation and hearsay rather than a structured story as such."
+        },
+        {
+          "sense_index": 7,
+          "label": "repute, fame, standing, social estimation",
+          "gloss": "Reputation, fame, standing, esteem, or social importance.",
+          "confidence": "established",
+          "attested_periods": [
+            "classical"
+          ],
+          "register_affinities": [
+            "historiographical"
+          ],
+          "domain_affinities": [
+            "social status",
+            "reputation",
+            "honor"
+          ],
+          "merged_candidate_count": 9,
+          "period_notes": "Attested in Classical historiography; often in evaluative or social-ranking contexts.",
+          "notes": "Distinct from 'regard/notice' (attention paid in a situation) and from 'report/rumor' (what is said)."
+        },
+        {
+          "sense_index": 8,
+          "label": "status, category, reckoning as",
+          "gloss": "Status, class, or reckoning under which someone is counted or treated.",
+          "confidence": "established",
+          "attested_periods": [
+            "classical"
+          ],
+          "register_affinities": [
+            "historiographical"
+          ],
+          "domain_affinities": [
+            "classification",
+            "social status",
+            "legal status"
+          ],
+          "merged_candidate_count": 6,
+          "period_notes": "Attested in Classical prose, especially in formulae like ἐν ἀνδρῶν λόγῳ / ἐν ἀνδραπόδων λόγῳ.",
+          "notes": "This is a classificatory sense: not 'reputation' but the category in which one is counted."
+        },
+        {
+          "sense_index": 9,
+          "label": "ratio, proportion, due measure",
+          "gloss": "Ratio, proportion, correspondence in measure, or proportional relation.",
+          "confidence": "established",
+          "attested_periods": [
+            "classical"
+          ],
+          "register_affinities": [
+            "historiographical"
+          ],
+          "domain_affinities": [
+            "measurement",
+            "comparison",
+            "technical description"
+          ],
+          "merged_candidate_count": 11,
+          "period_notes": "Securely attested in Classical prose, especially Herodotean descriptive and comparative passages.",
+          "notes": "A genuine non-discursive sense, clearly distinct from speech and reason."
+        },
+        {
+          "sense_index": 10,
+          "label": "discussion, deliberation, debate",
+          "gloss": "Discussion, debate, deliberative exchange, or consultation among parties.",
+          "confidence": "established",
+          "attested_periods": [
+            "classical"
+          ],
+          "register_affinities": [
+            "historiographical"
+          ],
+          "domain_affinities": [
+            "politics",
+            "military",
+            "deliberation"
+          ],
+          "merged_candidate_count": 14,
+          "period_notes": "Well attested in Classical historiographical prose, especially collective political or military deliberation.",
+          "notes": "Distinct from simple 'speech' because the emphasis is reciprocal or collective deliberation."
+        },
+        {
+          "sense_index": 11,
+          "label": "conversation, interview, audience",
+          "gloss": "Conversation with someone, interview, audience, or occasion of speaking face to face.",
+          "confidence": "established",
+          "attested_periods": [
+            "classical"
+          ],
+          "register_affinities": [
+            "historiographical"
+          ],
+          "domain_affinities": [
+            "interaction",
+            "diplomacy",
+            "court"
+          ],
+          "merged_candidate_count": 20,
+          "period_notes": "Attested in Classical prose, especially with ἐς λόγους ἐλθεῖν and similar formulas.",
+          "notes": "Close to 'discussion' but narrower: the event of coming into speech/contact with someone."
+        },
+        {
+          "sense_index": 12,
+          "label": "proposal, plan, counsel",
+          "gloss": "A proposal, plan, counsel, or course of action put forward.",
+          "confidence": "probable",
+          "attested_periods": [
+            "classical"
+          ],
+          "register_affinities": [
+            "historiographical"
+          ],
+          "domain_affinities": [
+            "strategy",
+            "counsel",
+            "planning"
+          ],
+          "merged_candidate_count": 6,
+          "period_notes": "Mostly Classical prose; often in political or strategic contexts where λόγος is something adopted, proposed, or accepted.",
+          "notes": "Some examples overlap with 'argument' or 'terms'; retained as a practical/action-oriented sense."
+        },
+        {
+          "sense_index": 13,
+          "label": "terms, condition, agreement, compact",
+          "gloss": "Terms or conditions of an agreement, stipulation, compact, or accepted arrangement.",
+          "confidence": "established",
+          "attested_periods": [
+            "classical"
+          ],
+          "register_affinities": [
+            "historiographical"
+          ],
+          "domain_affinities": [
+            "diplomacy",
+            "agreement",
+            "contract"
+          ],
+          "merged_candidate_count": 10,
+          "period_notes": "Well attested in Classical prose, especially diplomatic, contractual, and military contexts.",
+          "notes": "Separated from 'proposal/plan' because these uses concern settled or stipulated terms rather than merely suggested action."
+        },
+        {
+          "sense_index": 14,
+          "label": "pretext, pretence, ostensible plea",
+          "gloss": "A pretext, pretence, outward plea, or merely nominal justification.",
+          "confidence": "established",
+          "attested_periods": [
+            "classical"
+          ],
+          "register_affinities": [
+            "historiographical"
+          ],
+          "domain_affinities": [
+            "politics",
+            "deception",
+            "rhetorical framing"
+          ],
+          "merged_candidate_count": 11,
+          "period_notes": "Strongly Classical in historiographical prose; continues into Koine legal/moral 'ground' only indirectly. Often marked by τῷ λόγῳ or πρόσχημα λόγων.",
+          "notes": "A salient Herodotean specialization of λόγος in political narrative."
+        },
+        {
+          "sense_index": 15,
+          "label": "truth, reality, accurate statement",
+          "gloss": "Truth, factual correctness, or reality as opposed to mere appearance or loose naming.",
+          "confidence": "probable",
+          "attested_periods": [
+            "classical"
+          ],
+          "register_affinities": [
+            "historiographical"
+          ],
+          "domain_affinities": [
+            "truth-claims",
+            "correction",
+            "precision"
+          ],
+          "merged_candidate_count": 5,
+          "period_notes": "Attested in Classical prose, especially in phrases like ἀληθέι λόγῳ; one Koine-adjacent legal/moral use is possible but not central.",
+          "notes": "These are mostly phraseological uses ('in true account', 'in accurate terms') rather than a broad standalone sense."
+        },
+        {
+          "sense_index": 16,
+          "label": "worth mention, noteworthy",
+          "gloss": "Something worth speaking of, worth mention, notable, or remarkable.",
+          "confidence": "established",
+          "attested_periods": [
+            "classical"
+          ],
+          "register_affinities": [
+            "historiographical",
+            "philosophical"
+          ],
+          "domain_affinities": [
+            "evaluation",
+            "notability",
+            "description"
+          ],
+          "merged_candidate_count": 11,
+          "period_notes": "Attested in Classical historiography and philosophical prose, often in formulas like λόγου ἄξιος / λόγου μέζων.",
+          "notes": "Includes both 'worthy of mention' and 'beyond description' style evaluative formulas."
+        },
+        {
+          "sense_index": 17,
+          "label": "formulaic 'so to speak', in words, verbally",
+          "gloss": "A phrase marking manner of speaking, verbal approximation, or expression in words.",
+          "confidence": "probable",
+          "attested_periods": [
+            "classical"
+          ],
+          "register_affinities": [
+            "historiographical"
+          ],
+          "domain_affinities": [
+            "metalinguistic",
+            "style"
+          ],
+          "merged_candidate_count": 4,
+          "period_notes": "Attested in Classical prose, especially Herodotean authorial style.",
+          "notes": "Phraseological rather than lexical-core; retained because recurrent and semantically distinctive."
+        },
+        {
+          "sense_index": 18,
+          "label": "message, communication",
+          "gloss": "A message, communication, or conveyed verbal content sent from one party to another.",
+          "confidence": "probable",
+          "attested_periods": [
+            "classical"
+          ],
+          "register_affinities": [
+            "historiographical"
+          ],
+          "domain_affinities": [
+            "diplomacy",
+            "messaging"
+          ],
+          "merged_candidate_count": 5,
+          "period_notes": "Attested in Classical historiographical prose, especially diplomatic or military communication.",
+          "notes": "Close to 'word/speech' and 'offer/terms', but here the transmissive function is central."
+        },
+        {
+          "sense_index": 19,
+          "label": "ground, cause, basis",
+          "gloss": "A ground, cause, or basis for action, judgment, or exception.",
+          "confidence": "probable",
+          "attested_periods": [
+            "koine"
+          ],
+          "register_affinities": [
+            "religious_NT"
+          ],
+          "domain_affinities": [
+            "legal",
+            "ethical"
+          ],
+          "merged_candidate_count": 1,
+          "period_notes": "Thin in Classical corpus but clearly present in Koine legal/moral usage.",
+          "notes": "Probably related to the broader 'reason/ground' family, but the legal-exception formula merits separate notice in Koine."
+        },
+        {
+          "sense_index": 20,
+          "label": "commandment, injunction",
+          "gloss": "A command, injunction, or authoritative directive.",
+          "confidence": "questionable",
+          "attested_periods": [
+            "koine"
+          ],
+          "register_affinities": [
+            "religious_NT"
+          ],
+          "domain_affinities": [
+            "religious",
+            "legal"
+          ],
+          "merged_candidate_count": 1,
+          "period_notes": "Only thinly attested in Koine gospel translation style; may reflect overlap with Hebrew/Aramaic source semantics or translator choice.",
+          "notes": "Needs human review; many lexica would subsume this under 'word' or 'matter'."
+        }
+      ],
+      "stage4_classification_counts": {
+        "account, narrative, story": 106,
+        "account, notice, account taken of": 1,
+        "account, reckoning, answer rendered": 8,
+        "argument, thesis, line of reasoning": 20,
+        "commandment, injunction": 2,
+        "conversation, interview, audience": 36,
+        "discussion, deliberation, debate": 29,
+        "formulaic 'so to speak', in words, verbally": 20,
+        "ground, cause, basis": 2,
+        "message, communication": 11,
+        "pretext, pretence, ostensible plea": 14,
+        "proposal, plan, counsel": 8,
+        "ratio, proportion, due measure": 11,
+        "reason, rational consideration, judgment": 22,
+        "regard, notice, account taken of": 19,
+        "report, rumor, hearsay, common talk": 19,
+        "repute, fame, standing, social estimation": 6,
+        "status, category, reckoning as": 6,
+        "terms, condition, agreement, compact": 10,
+        "truth, reality, accurate statement": 12,
+        "uncertain": 1,
+        "word, speech, utterance": 123,
+        "worth mention, noteworthy": 17
+      }
+    },
+    "nomos": {
+      "lemma_greek": "νόμος",
+      "canonical_senses": [
+        {
+          "sense_index": 0,
+          "label": "pasture, grazing-ground",
+          "gloss": "Pasture land or a grazing-place for animals.",
+          "confidence": "established",
+          "attested_periods": [
+            "archaic",
+            "classical"
+          ],
+          "register_affinities": [
+            "epic",
+            "historiographical"
+          ],
+          "domain_affinities": [
+            "pastoral",
+            "animal husbandry",
+            "poetic diction"
+          ],
+          "merged_candidate_count": 6,
+          "period_notes": "Clearly attested in archaic epic; also appears in a later poetic/proverbial reuse in Classical prose quotation. This is the oldest concrete sense and stands apart from the institutional senses.",
+          "notes": "Candidate 388 was excluded: the Homeric phrase ἐπέων δὲ πολὺς νομὸς is not supported as 'pasture' and likely reflects a different lexical item or a problematic extraction."
+        },
+        {
+          "sense_index": 1,
+          "label": "custom, usage, convention",
+          "gloss": "An established custom, habitual practice, social convention, or traditional way of doing things.",
+          "confidence": "established",
+          "attested_periods": [
+            "classical"
+          ],
+          "register_affinities": [
+            "tragic",
+            "historiographical"
+          ],
+          "domain_affinities": [
+            "social practice",
+            "ethnography",
+            "ritual",
+            "political culture"
+          ],
+          "merged_candidate_count": 70,
+          "period_notes": "Strongly attested in Classical tragedy and especially Herodotean ethnography; remains productive into Koine only weakly in this corpus, where institutional/Jewish-scriptural senses dominate instead. This sense shows the broad pre-juridical social meaning from which stricter legal senses are often hard to separate.",
+          "notes": "This is the major Classical non-juridical sense. Some passages could also be rendered 'law' in English, but the evidence often points to customary norm rather than enacted statute. It is especially characteristic of ethnographic description."
+        },
+        {
+          "sense_index": 2,
+          "label": "law, statute, ordinance",
+          "gloss": "A law, enacted rule, binding ordinance, or formally recognized legal norm.",
+          "confidence": "established",
+          "attested_periods": [
+            "classical",
+            "koine"
+          ],
+          "register_affinities": [
+            "tragic",
+            "historiographical",
+            "philosophical",
+            "religious_NT"
+          ],
+          "domain_affinities": [
+            "law",
+            "politics",
+            "civic institutions",
+            "ethics"
+          ],
+          "merged_candidate_count": 68,
+          "period_notes": "Well attested from Classical tragedy, historiography, and philosophy onward; becomes especially dominant in institutional and scriptural contexts. This reflects the expected narrowing and institutionalization of the lemma.",
+          "notes": "Includes civic law, royal ordinance, temple law, and other binding rules treated as legal or quasi-legal. Some Herodotean passages hover between 'custom' and 'law'; they are placed here when the translation or context stresses enactment, compulsion, or formal rule."
+        },
+        {
+          "sense_index": 3,
+          "label": "rite, religious observance",
+          "gloss": "A prescribed rite or religious observance, especially funerary or cultic practice.",
+          "confidence": "probable",
+          "attested_periods": [
+            "classical"
+          ],
+          "register_affinities": [
+            "tragic"
+          ],
+          "domain_affinities": [
+            "religion",
+            "funerary practice",
+            "ritual"
+          ],
+          "merged_candidate_count": 1,
+          "period_notes": "Securely attested in Classical tragedy; in prose ethnography similar passages often merge into the broader 'custom' sense rather than a distinct ritual sense.",
+          "notes": "Probably a specialization of 'custom/ordinance' in sacred context rather than a wholly separate lexical branch, but the direct rendering 'rites' justifies keeping it distinct."
+        },
+        {
+          "sense_index": 4,
+          "label": "law, universal principle",
+          "gloss": "A governing principle or law conceived as generally or universally operative, not merely civic legislation.",
+          "confidence": "probable",
+          "attested_periods": [
+            "classical"
+          ],
+          "register_affinities": [
+            "tragic"
+          ],
+          "domain_affinities": [
+            "gnomic thought",
+            "ethics",
+            "philosophical abstraction"
+          ],
+          "merged_candidate_count": 3,
+          "period_notes": "Attested in Classical poetic-philosophical diction; the corpus gives only limited evidence, but the distinction from civic statute is real.",
+          "notes": "This covers gnomic or quasi-philosophical uses such as 'this law prevails'. It is adjacent to both 'norm' and 'law' but broader than enacted statute."
+        },
+        {
+          "sense_index": 5,
+          "label": "melody, strain, song-type",
+          "gloss": "A melody, musical strain, or named type of song/performance.",
+          "confidence": "established",
+          "attested_periods": [
+            "classical"
+          ],
+          "register_affinities": [
+            "historiographical",
+            "tragic"
+          ],
+          "domain_affinities": [
+            "music",
+            "performance",
+            "song"
+          ],
+          "merged_candidate_count": 3,
+          "period_notes": "Attested in Classical prose and probably present in lyric contexts, though the tragic lyric extraction is weak. This is a distinct specialized sense unrelated to legal usage.",
+          "notes": "The Herodotean Arion passage strongly supports the musical sense. Candidate 425 from tragic lyric is plausible but much weaker and may reflect metrical overguessing."
+        },
+        {
+          "sense_index": 6,
+          "label": "administrative district, nome, province",
+          "gloss": "An administrative district or territorial division under governance, especially an Egyptian nome or Persian imperial province/tribute district.",
+          "confidence": "established",
+          "attested_periods": [
+            "classical"
+          ],
+          "register_affinities": [
+            "historiographical"
+          ],
+          "domain_affinities": [
+            "administration",
+            "geography",
+            "imperial governance",
+            "taxation"
+          ],
+          "merged_candidate_count": 45,
+          "period_notes": "Strongly attested in Classical historiography, especially Herodotus. This is a specialized administrative development and a clear semantic branch distinct from 'law/custom'.",
+          "notes": "This sense is especially prominent in Herodotus for Egyptian nomes and Persian tribute districts. It is not merely metaphorical extension from 'distribution' but a lexicalized administrative meaning."
+        },
+        {
+          "sense_index": 7,
+          "label": "scriptural Law, Torah",
+          "gloss": "The Law as authoritative sacred scripture or covenantal teaching, especially in Jewish and New Testament usage.",
+          "confidence": "established",
+          "attested_periods": [
+            "koine"
+          ],
+          "register_affinities": [
+            "religious_NT"
+          ],
+          "domain_affinities": [
+            "scripture",
+            "Judaism",
+            "religion"
+          ],
+          "merged_candidate_count": 8,
+          "period_notes": "Attested only in Koine in this corpus, where νόμος often refers not merely to law in general but specifically to the Mosaic Law or the scriptural corpus paired with 'the prophets'. This is a clear institutional-religious specialization.",
+          "notes": "Separated from general 'law, statute' because the NT evidence repeatedly points to a fixed scriptural-religious referent rather than ordinary legislation."
+        }
+      ],
+      "stage4_classification_counts": {
+        "administrative district, nome, province": 46,
+        "custom, usage, convention": 70,
+        "law, statute, ordinance": 46,
+        "law, universal principle": 5,
+        "melody, strain, song-type": 2,
+        "pasture, grazing-ground": 6,
+        "rite, religious observance": 1,
+        "scriptural Law, Torah": 8
+      }
+    },
+    "physis": {
+      "lemma_greek": "φύσις",
+      "canonical_senses": [
+        {
+          "sense_index": 0,
+          "label": "growth, origin, birth",
+          "gloss": "The process of growing or coming into being; origin or birth.",
+          "confidence": "probable",
+          "attested_periods": [
+            "archaic",
+            "classical"
+          ],
+          "register_affinities": [
+            "epic",
+            "historiographical"
+          ],
+          "domain_affinities": [
+            "botanical",
+            "genealogical",
+            "origins"
+          ],
+          "merged_candidate_count": 4,
+          "period_notes": "Clearly present already in archaic poetry and still available in Classical prose; in this corpus it appears as the more concrete, etymologically transparent sense beside broader abstract uses.",
+          "notes": "This sense is supported, but some individual candidates are contextually loose. The Herodotean 'noble birth' example points specifically to lineage/origin rather than physical growth."
+        },
+        {
+          "sense_index": 1,
+          "label": "natural constitution, character, property",
+          "gloss": "The inherent nature, constitution, character, or regular property of a person, animal, thing, or environment.",
+          "confidence": "established",
+          "attested_periods": [
+            "classical"
+          ],
+          "register_affinities": [
+            "tragic",
+            "historiographical",
+            "philosophical"
+          ],
+          "domain_affinities": [
+            "anthropological",
+            "ethical",
+            "zoological",
+            "geographical",
+            "general descriptive prose"
+          ],
+          "merged_candidate_count": 31,
+          "period_notes": "Strongly attested throughout the Classical material across tragedy, historiography, and philosophy; this is the dominant sense in the present corpus and shows the expected abstraction from concrete 'growth/origin' to inherent character or nature.",
+          "notes": "This canonical sense absorbs the upstream labels 'natural form, constitution' and 'nature of a thing', which are not cleanly separable in the evidence. It includes adverbial/instrumental uses such as φύσει 'by nature' and applies both to persons ('human nature', innate disposition) and to things or environments ('nature of Egypt', 'nature of crocodiles')."
+        },
+        {
+          "sense_index": 2,
+          "label": "form, shape, outward appearance",
+          "gloss": "The bodily form, stature, or visible shape of something.",
+          "confidence": "probable",
+          "attested_periods": [
+            "classical"
+          ],
+          "register_affinities": [
+            "historiographical"
+          ],
+          "domain_affinities": [
+            "physical description",
+            "zoological",
+            "somatic"
+          ],
+          "merged_candidate_count": 4,
+          "period_notes": "Attested in Classical historiographical description; in this corpus it appears as a more concrete descriptive specialization of the broader 'constitution/nature' sense.",
+          "notes": "Separated from the broader 'nature/constitution' sense because the evidence here points specifically to visible appearance or bodily stature. Still, the boundary is porous, and some lexica might subsume these examples under the general sense."
+        }
+      ],
+      "stage4_classification_counts": {
+        "form, shape, outward appearance": 1,
+        "growth, origin, birth": 1,
+        "natural constitution, character, property": 19
+      }
+    },
+    "psyche": {
+      "lemma_greek": "ψυχή",
+      "canonical_senses": [
+        {
+          "sense_index": 0,
+          "label": "life, life-breath",
+          "gloss": "The life of a person or creature, especially as something at risk, lost, taken, or departing in death.",
+          "confidence": "established",
+          "attested_periods": [
+            "archaic",
+            "classical",
+            "koine"
+          ],
+          "register_affinities": [
+            "epic",
+            "tragic",
+            "historiographical",
+            "religious_NT"
+          ],
+          "domain_affinities": [
+            "death",
+            "danger",
+            "embodied life",
+            "ethical-religious exhortation"
+          ],
+          "merged_candidate_count": 50,
+          "period_notes": "Strongly attested from Archaic epic onward and remains fully productive in Classical prose and Koine; this is the oldest and broadest sense, close to the etymological notion of breath/life.",
+          "notes": "This inventory merges 'breath, life-force' with the common practical sense 'life' because the evidence repeatedly concerns mortal life, survival, and the departure of life at death. In early epic the imagery of breath/departure is especially vivid."
+        },
+        {
+          "sense_index": 1,
+          "label": "shade, ghost of the dead",
+          "gloss": "The surviving dead person as a shade or ghost, especially in Hades or at the tomb.",
+          "confidence": "established",
+          "attested_periods": [
+            "archaic",
+            "classical"
+          ],
+          "register_affinities": [
+            "epic",
+            "tragic"
+          ],
+          "domain_affinities": [
+            "afterlife",
+            "funerary",
+            "underworld"
+          ],
+          "merged_candidate_count": 15,
+          "period_notes": "Clearly attested in Archaic epic and still visible in Classical tragedy; in the present corpus it is not securely represented in Koine passages.",
+          "notes": "This is distinct from mere 'life' because the passages treat ψυχή as what goes to Hades, appears after death, or exists as an eidolon-like remnant."
+        },
+        {
+          "sense_index": 2,
+          "label": "soul, inner self",
+          "gloss": "The inner self or personal soul, especially as the bearer of moral, religious, or existential value.",
+          "confidence": "established",
+          "attested_periods": [
+            "classical",
+            "koine"
+          ],
+          "register_affinities": [
+            "tragic",
+            "historiographical",
+            "philosophical",
+            "religious_NT"
+          ],
+          "domain_affinities": [
+            "personhood",
+            "ethics",
+            "religion",
+            "selfhood"
+          ],
+          "merged_candidate_count": 45,
+          "period_notes": "Weakly foreshadowed in some Classical material, but especially prominent in philosophical Classical prose and highly productive in Koine religious discourse.",
+          "notes": "This sense should be kept distinct from the concrete 'life' sense. In Koine, English translations often use 'soul' where the Greek may still overlap with 'life'; nevertheless some passages, especially those contrasting ψυχή with σώμα or treating it as the object of care/rest/salvation, support a genuine inner-self sense."
+        },
+        {
+          "sense_index": 3,
+          "label": "mind, heart, seat of feeling and character",
+          "gloss": "The seat of emotion, desire, courage, grief, disposition, or inward response.",
+          "confidence": "established",
+          "attested_periods": [
+            "classical",
+            "koine"
+          ],
+          "register_affinities": [
+            "tragic",
+            "historiographical",
+            "religious_NT"
+          ],
+          "domain_affinities": [
+            "emotion",
+            "character",
+            "courage",
+            "devotion"
+          ],
+          "merged_candidate_count": 17,
+          "period_notes": "Well attested in Classical tragedy and historiography; continues in Koine in affective and devotional expressions.",
+          "notes": "This sense overlaps with 'soul, inner self' but is narrower and more psychological: it concerns affective and dispositional interiority rather than the person as a whole or the soul as an entity."
+        },
+        {
+          "sense_index": 4,
+          "label": "immortal soul",
+          "gloss": "The soul conceived as deathless or transmigrating, especially in philosophical or doctrinal discourse.",
+          "confidence": "probable",
+          "attested_periods": [
+            "classical",
+            "koine"
+          ],
+          "register_affinities": [
+            "historiographical",
+            "philosophical",
+            "religious_NT"
+          ],
+          "domain_affinities": [
+            "philosophy",
+            "eschatology",
+            "metempsychosis"
+          ],
+          "merged_candidate_count": 6,
+          "period_notes": "Securely attested in Classical philosophical/speculative contexts; later religious developments may continue or reshape it, but the present Koine evidence is mixed and often better classified under 'soul, inner self'.",
+          "notes": "Included as a separate sense because some passages explicitly mark immortality or post-mortem migration. NT Matthew 10.28 was not treated as decisive for a fully philosophical 'immortal soul' sense, since the wording is theological but not identical with Platonic doctrine."
+        },
+        {
+          "sense_index": 5,
+          "label": "living creature, animate being",
+          "gloss": "A creature characterized by having life; an animate being.",
+          "confidence": "probable",
+          "attested_periods": [
+            "classical"
+          ],
+          "register_affinities": [
+            "historiographical"
+          ],
+          "domain_affinities": [
+            "zoological",
+            "biological"
+          ],
+          "merged_candidate_count": 2,
+          "period_notes": "Only thinly attested in the present corpus, but supported in Classical prose and anticipated by later biblical usage noted in the reference material.",
+          "notes": "The evidence is sparse in this corpus, but the construction points beyond 'life' as an abstract and toward 'living creature/animal life'. Wiktionary's Revelation example suggests this sense becomes clearer in later Greek, though that passage is not among the Stage 2 candidates."
+        }
+      ],
+      "stage4_classification_counts": {
+        "immortal soul": 2,
+        "life, life-breath": 55,
+        "living creature, animate being": 1,
+        "mind, heart, seat of feeling and character": 9,
+        "shade, ghost of the dead": 5,
+        "soul, inner self": 8
+      }
+    },
+    "soma": {
+      "lemma_greek": "σῶμα",
+      "canonical_senses": [
+        {
+          "sense_index": 0,
+          "label": "corpse, dead body",
+          "gloss": "The body of a dead human being; a corpse, especially for burial, recovery, or mutilation.",
+          "confidence": "established",
+          "attested_periods": [
+            "archaic",
+            "classical",
+            "koine"
+          ],
+          "register_affinities": [
+            "epic",
+            "tragic",
+            "historiographical",
+            "religious_NT"
+          ],
+          "domain_affinities": [
+            "funerary",
+            "battle",
+            "death",
+            "burial"
+          ],
+          "merged_candidate_count": 16,
+          "period_notes": "Strongly attested already in archaic epic and continuing through Classical and Koine texts. In this corpus it is especially prominent in funerary, battlefield, and post-mortem contexts; the Homeric prominence of this sense is clearly reflected.",
+          "notes": "This is the clearest early sense in the corpus and should be kept distinct from the general 'living body' sense. Candidate 147 is weak and likely erroneous against the context, but it belongs with this sense because the passage is plainly funerary."
+        },
+        {
+          "sense_index": 1,
+          "label": "body, living body",
+          "gloss": "The physical body of a living human or animal, as the seat of bodily condition, appearance, clothing, injury, growth, or contrast with soul.",
+          "confidence": "established",
+          "attested_periods": [
+            "classical",
+            "koine"
+          ],
+          "register_affinities": [
+            "historiographical",
+            "philosophical",
+            "religious_NT"
+          ],
+          "domain_affinities": [
+            "anatomy",
+            "embodiment",
+            "clothing",
+            "injury",
+            "ritual",
+            "body-soul contrast"
+          ],
+          "merged_candidate_count": 46,
+          "period_notes": "Well attested in Classical prose and continued robustly in Koine. The corpus suggests broadening from the early prominence of 'corpse' toward the ordinary neutral sense 'body' for living beings, including explicit body–soul contrasts in philosophical and religious texts.",
+          "notes": "This is the ordinary non-metonymic sense. It includes human and animal bodies. Some very weak archaic candidates (142, 168) are inferential and should not be used alone to claim archaic attestation for the neutral living-body sense in this dataset."
+        },
+        {
+          "sense_index": 2,
+          "label": "person, bodily self",
+          "gloss": "A person considered in bodily presence or personal exposure; 'one's person'.",
+          "confidence": "probable",
+          "attested_periods": [
+            "classical"
+          ],
+          "register_affinities": [
+            "historiographical",
+            "philosophical"
+          ],
+          "domain_affinities": [
+            "social reference",
+            "personal risk",
+            "metonymy"
+          ],
+          "merged_candidate_count": 8,
+          "period_notes": "Attested in Classical prose, especially historiographical and ethical contexts, where English translators render 'person(s)' or 'on his person'. The sense appears as a metonymic extension from the physical body.",
+          "notes": "This should be separated from the literal bodily sense, but it is clearly secondary and metonymic. Some passages could also be paraphrased literally as 'body'; the distinction is justified where the translator explicitly uses 'person(s)' or idiomatic 'on his person'."
+        },
+        {
+          "sense_index": 3,
+          "label": "carcass, animal body",
+          "gloss": "The body or carcass of an animal, especially after slaughter or in sacrificial handling.",
+          "confidence": "established",
+          "attested_periods": [
+            "classical"
+          ],
+          "register_affinities": [
+            "epic",
+            "historiographical"
+          ],
+          "domain_affinities": [
+            "sacrifice",
+            "butchery",
+            "animal body"
+          ],
+          "merged_candidate_count": 6,
+          "period_notes": "Securely attested in Classical prose. This is not merely the general bodily sense, since several passages concern flayed sacrificial victims and what remains of the animal body after butchery.",
+          "notes": "This is best treated as a specialized extension of 'body' to animal remains/carcass. Candidate 178 from epic supports the same semantic area, though the exact Greek context is less transparent in isolation."
+        }
+      ],
+      "stage4_classification_counts": {
+        "body, living body": 48,
+        "carcass, animal body": 3,
+        "corpse, dead body": 16,
+        "person, bodily self": 1
+      }
+    },
+    "techne": {
+      "lemma_greek": "τέχνη",
+      "canonical_senses": [
+        {
+          "sense_index": 0,
+          "label": "craft, skill",
+          "gloss": "Practical skill, craft-knowledge, or trained ability in doing or making something.",
+          "confidence": "established",
+          "attested_periods": [
+            "archaic",
+            "classical"
+          ],
+          "register_affinities": [
+            "epic",
+            "tragic",
+            "historiographical",
+            "philosophical",
+            "unmarked"
+          ],
+          "domain_affinities": [
+            "craft production",
+            "professional expertise",
+            "medicine",
+            "martial skill",
+            "performance roles"
+          ],
+          "merged_candidate_count": 16,
+          "period_notes": "Securely attested in Archaic and Classical material; this is the stable core sense of the lemma across epic, tragedy, historiography, and philosophy in the present corpus.",
+          "notes": "This is the dominant sense. It covers both general competence and specific expert skill in a field. Several occurrences translated as 'art' are better treated here when they refer simply to practical mastery rather than a formalized discipline."
+        },
+        {
+          "sense_index": 1,
+          "label": "art, craft as a systematic discipline",
+          "gloss": "An art or technical discipline conceived as an organized body of practice or expertise.",
+          "confidence": "established",
+          "attested_periods": [
+            "classical"
+          ],
+          "register_affinities": [
+            "tragic",
+            "historiographical",
+            "philosophical"
+          ],
+          "domain_affinities": [
+            "technical disciplines",
+            "medicine",
+            "divination",
+            "epistemology"
+          ],
+          "merged_candidate_count": 8,
+          "period_notes": "Well attested in Classical prose and drama, especially in contexts of divination, medicine, and reflective/philosophical discussion about whether something counts as a teachable art.",
+          "notes": "Distinct from the broad core sense because these passages construe τέχνη as a recognized discipline or teachable technical domain. Some overlap with 'craft, skill' is inevitable, but the systematic/disciplinary framing is recurrent enough to preserve."
+        },
+        {
+          "sense_index": 2,
+          "label": "trade, occupation, profession",
+          "gloss": "A trade, hereditary occupation, or professional line of work.",
+          "confidence": "established",
+          "attested_periods": [
+            "classical"
+          ],
+          "register_affinities": [
+            "historiographical"
+          ],
+          "domain_affinities": [
+            "social roles",
+            "occupations",
+            "professional status"
+          ],
+          "merged_candidate_count": 2,
+          "period_notes": "Clearly attested in Classical historiographical prose, especially in social descriptions of occupations and inherited crafts.",
+          "notes": "This is narrower than the general 'craft, skill' sense: the emphasis falls on occupation or profession, often socially inherited or institutionally recognized."
+        },
+        {
+          "sense_index": 3,
+          "label": "cunning, artifice, trick",
+          "gloss": "Skill used schemingly: contrivance, stratagem, or deceptive artifice.",
+          "confidence": "probable",
+          "attested_periods": [
+            "classical"
+          ],
+          "register_affinities": [
+            "tragic",
+            "historiographical"
+          ],
+          "domain_affinities": [
+            "deception",
+            "stratagem",
+            "manipulative skill"
+          ],
+          "merged_candidate_count": 4,
+          "period_notes": "Attested in Classical and possibly already Archaic material, but the Archaic example is weakly supported and inferential. The clearest support comes from Classical prose and tragedy where τέχνη shades into contrivance or subtle maneuver.",
+          "notes": "This sense is supported, but often through contextual inference rather than explicit translation. It should be kept distinct from neutral 'skill' because the evaluative coloring is negative or strategic."
+        },
+        {
+          "sense_index": 4,
+          "label": "appointed sphere, function",
+          "gloss": "An assigned sphere of action, office, or function.",
+          "confidence": "questionable",
+          "attested_periods": [
+            "classical"
+          ],
+          "register_affinities": [
+            "historiographical"
+          ],
+          "domain_affinities": [
+            "religious order",
+            "cosmic/social functions"
+          ],
+          "merged_candidate_count": 1,
+          "period_notes": "Only one Classical historiographical passage in the present corpus supports this reading, and it may reflect translator interpretation of a culturally specific context.",
+          "notes": "Needs human review. This may be a genuine extension from 'craft/office' to 'function,' but with only one passage it could also be over-interpretation by the translator."
+        }
+      ],
+      "stage4_classification_counts": {
+        "appointed sphere, function": 1,
+        "art, craft as a systematic discipline": 2,
+        "craft, skill": 8,
+        "cunning, artifice, trick": 4,
+        "trade, occupation, profession": 4
+      }
+    },
+    "theos": {
+      "lemma_greek": "θεός",
+      "canonical_senses": [
+        {
+          "sense_index": 0,
+          "label": "god, deity",
+          "gloss": "A god or divine being; in the extant corpus chiefly the gods of Homeric polytheism, with occasional singular reference to a particular deity and feminine reference by agreement/context.",
+          "confidence": "established",
+          "attested_periods": [
+            "archaic"
+          ],
+          "register_affinities": [
+            "epic",
+            "prayer",
+            "ritual",
+            "mythic narrative"
+          ],
+          "domain_affinities": [
+            "religion",
+            "mythology",
+            "cult",
+            "divine-human distinction"
+          ],
+          "merged_candidate_count": 106,
+          "period_notes": "Strongly and repeatedly attested in the archaic epic material. The pilot corpus here is overwhelmingly Homeric, so the inventory shows semantic stability rather than diachronic diversification; no secure later register shift can be demonstrated from this dataset alone.",
+          "notes": "This is the core denotation of the lemma and covers singular, plural, and contextually specified individual gods (Apollo, Zeus, Athena, etc.). Some occurrences are weakly evidenced because of alignment noise, but the sense itself is beyond doubt. The corpus also includes feminine-reference contexts ('the goddess') under the same lexical sense rather than requiring a separate canonical sense."
+        },
+        {
+          "sense_index": 1,
+          "label": "godlike, divine",
+          "gloss": "Used predicatively or comparably of a human or action as godlike, divine, or like a god.",
+          "confidence": "probable",
+          "attested_periods": [
+            "archaic"
+          ],
+          "register_affinities": [
+            "epic",
+            "heroic description",
+            "formulaic simile"
+          ],
+          "domain_affinities": [
+            "evaluation",
+            "appearance",
+            "heroic style"
+          ],
+          "merged_candidate_count": 4,
+          "period_notes": "Attested in archaic epic only in this corpus, especially in formulaic comparison (e.g. θεὸς ὣς / ὥς τε θεός). This looks like a regular epic extension from the noun into comparative-predicative usage rather than a separate later development.",
+          "notes": "This should be kept distinct from the basic noun sense because the referent is not itself a deity but a human or action compared to one. Evidence is narrower and mostly formulaic, but sufficiently convergent."
+        }
+      ],
+      "stage4_classification_counts": {
+        "god, deity": 131,
+        "godlike, divine": 3,
+        "uncertain": 65
+      }
+    }
+  }
+}
